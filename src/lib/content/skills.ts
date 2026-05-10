@@ -88,7 +88,6 @@ export const skillsSection: SkillsSectionType = {
       experience: '5+ years',
       description: 'Animations, Grid, Flexbox, Responsive Design',
       category: 'frontend',
-      featured: true,
     },
     {
       name: 'JavaScript',
@@ -97,6 +96,7 @@ export const skillsSection: SkillsSectionType = {
       experience: '4+ years',
       description: 'ES6+, DOM manipulation, Async programming',
       category: 'frontend',
+      featured: true,
     },
     {
       name: 'React',
@@ -105,6 +105,16 @@ export const skillsSection: SkillsSectionType = {
       experience: '2+ years',
       description: 'Hooks, Context API, Component architecture',
       category: 'frontend',
+      featured: true,
+    },
+    {
+      name: 'Next.js',
+      icon: 'logos:nextjs-icon',
+      level: 85,
+      experience: '2+ years',
+      description: 'App Router, SSR, SSG, API Routes',
+      category: 'frontend',
+      featured: true,
     },
     {
       name: 'Python',
@@ -122,6 +132,7 @@ export const skillsSection: SkillsSectionType = {
       experience: '2+ years',
       description: 'REST APIs, Authentication, ORM',
       category: 'backend',
+      featured: true,
     },
     {
       name: 'C/C++',
@@ -130,7 +141,6 @@ export const skillsSection: SkillsSectionType = {
       experience: '4+ years',
       description: 'System programming, Embedded systems',
       category: 'backend',
-      featured: true,
     },
     {
       name: 'PHP',
@@ -148,6 +158,7 @@ export const skillsSection: SkillsSectionType = {
       experience: '3+ years',
       description: 'Query optimization, Database design',
       category: 'backend',
+      featured: true,
     },
     {
       name: 'MongoDB',
@@ -193,11 +204,44 @@ export const skillsSection: SkillsSectionType = {
       featured: true,
     },
     {
+      name: 'Wireless System Integration',
+      icon: 'mdi:antenna',
+      level: 90,
+      experience: '3+ years',
+      description: 'RF communication, wireless sensor networks',
+      category: 'iot',
+      featured: true,
+    },
+    {
       name: 'Git',
       icon: 'logos:git-icon',
       level: 90,
       experience: '2+ years',
       description: 'Version control, Collaboration',
+      category: 'tools',
+    },
+    {
+      name: 'GitHub',
+      icon: 'logos:github-icon',
+      level: 92,
+      experience: '2+ years',
+      description: 'CI/CD, actions, collaboration',
+      category: 'tools',
+    },
+    {
+      name: 'Jira',
+      icon: 'logos:jira',
+      level: 85,
+      experience: '1+ year',
+      description: 'Project management, Agile, Scrum',
+      category: 'tools',
+    },
+    {
+      name: 'Google Cloud Platform',
+      icon: 'logos:google-cloud',
+      level: 80,
+      experience: '1+ year',
+      description: 'Cloud hosting, App Engine, Compute Engine',
       category: 'tools',
     },
     {
