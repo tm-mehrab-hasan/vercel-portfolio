@@ -40,13 +40,13 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4',
+        'fixed top-0 w-full z-50 transition-all duration-500 px-4 md:px-8 py-4',
         scrolled || isOpen 
           ? 'bg-blue-50/90 backdrop-blur-xl shadow-lg shadow-blue-900/5 border-b border-blue-100' 
           : 'bg-transparent'
       )}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-[95%] mx-auto flex justify-between items-center">
         <Link href="/" className="group shrink-0">
           <span className="text-3xl font-signature text-blue-600 hover:text-blue-700 transition-colors whitespace-nowrap">
             Mehrab Hasan
