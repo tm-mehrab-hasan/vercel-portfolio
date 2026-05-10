@@ -47,8 +47,10 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link href="/" className="text-3xl font-signature text-blue-600 hover:text-blue-700 transition-colors">
-          Mehrab Hasan
+        <Link href="/" className="group shrink-0">
+          <span className="text-3xl font-signature text-blue-600 hover:text-blue-700 transition-colors whitespace-nowrap">
+            Mehrab Hasan
+          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -58,12 +60,12 @@ const Navbar = () => {
               key={link.name}
               href={link.url}
               onClick={(e) => handleNavLinkClick(e, link.url)}
-              className="text-gray-600 hover:text-blue-600 transition-colors font-bold text-xs uppercase tracking-widest cursor-pointer"
+              className="text-gray-600 hover:text-blue-600 transition-colors font-bold text-xs uppercase tracking-widest cursor-pointer whitespace-nowrap"
             >
               {link.name}
             </a>
           ))}
-          <Button href={cta.url} variant="outline" className="px-5 py-2 text-xs font-black uppercase tracking-widest rounded-xl border-2" sameTab={cta.sameTab}>
+          <Button href={cta.url} variant="outline" className="px-5 py-2 text-xs font-black uppercase tracking-widest rounded-xl border-2 whitespace-nowrap" sameTab={cta.sameTab}>
             {cta.title}
           </Button>
         </div>
