@@ -2,7 +2,7 @@
 
 An AI-driven IoT & Robotics Engineer and Full-Stack Developer portfolio built with modern web technologies.
 
-![T. M. Mehrab Hasan Portfolio](public/images/og-preview.png) *(Note: Placeholder image path)*
+[![T. M. Mehrab Hasan Portfolio](public/images/og-preview.png)](https://tm-mehrab-hasan.vercel.app/)
 
 ## 🚀 Overview
 

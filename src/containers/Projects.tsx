@@ -85,27 +85,36 @@ const Projects = () => {
               {/* Project Visual Container - Strictly fixed height */}
               <div className="mb-6 h-[220px] w-full relative">
                 {(project.id === 'baazar-x' || project.id === 'movie' || project.id === 'portfolio-v1' || (project.url && project.url !== '#')) ? (
-                  <BrowserFrame url={project.url} className="h-full group-hover:-translate-y-2 transition-transform duration-500 shadow-lg">
-                    <div className="relative w-full h-full bg-gray-50 flex items-center justify-center overflow-hidden">
-                      {project.img ? (
-                        <Image
-                          src={project.img}
-                          alt={project.name}
-                          fill
-                          className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                  <Link 
+                    href={project.url} 
+                    target="_blank" 
+                    className="block h-full group/link"
+                    onClick={(e) => {
+                      if (!project.url || project.url === '#') e.preventDefault();
+                    }}
+                  >
+                    <BrowserFrame url={project.url} className="h-full group-hover:-translate-y-2 transition-transform duration-500 shadow-lg group-hover/link:shadow-blue-200/50">
+                      <div className="relative w-full h-full bg-gray-50 flex items-center justify-center overflow-hidden">
+                        {project.img ? (
+                          <Image
+                            src={project.img}
+                            alt={project.name}
+                            fill
+                            className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                          />
+                        ) : (
+                          <div className="flex flex-col items-center gap-4">
+                              <Icon icon={project.mainIcon || 'akar-icons:globe'} width={48} style={{ color: project.color }} className="animate-pulse" />
+                              <span className="text-[10px] font-mono text-gray-400">Live Preview Available</span>
+                          </div>
+                        )}
+                        <div
+                          className="absolute inset-0 opacity-5"
+                          style={{ backgroundColor: project.color }}
                         />
-                      ) : (
-                         <div className="flex flex-col items-center gap-4">
-                            <Icon icon={project.mainIcon || 'akar-icons:globe'} width={48} style={{ color: project.color }} className="animate-pulse" />
-                            <span className="text-[10px] font-mono text-gray-400">Live Preview Available</span>
-                         </div>
-                      )}
-                      <div
-                        className="absolute inset-0 opacity-5"
-                        style={{ backgroundColor: project.color }}
-                      />
-                    </div>
-                  </BrowserFrame>
+                      </div>
+                    </BrowserFrame>
+                  </Link>
                 ) : (
                   <div className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-50 border border-gray-50 group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center p-8">
                     <div
