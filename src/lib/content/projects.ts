@@ -10,7 +10,7 @@ export const projectsSection: ProjectsSectionType = {
       url: 'https://bitss.one/',
       repo: 'https://github.com/TM-Mehrab-Hasan/BITSS-VWAR-Software',
       year: 2025,
-      img: '/images/projects/vwar.png',
+      img: '/images/projects/bitss.png',
       mainIcon: 'akar-icons:shield',
       color: '#2563eb', // Blue
       projectSkills: [

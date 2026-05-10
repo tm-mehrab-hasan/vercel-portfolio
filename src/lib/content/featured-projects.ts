@@ -9,7 +9,7 @@ export const featuredProjectsSection: FeaturedProjectsSectionType = {
       category: 'web',
       url: 'https://bitss.one/',
       repo: 'https://github.com/TM-Mehrab-Hasan/BITSS-VWAR-Software',
-      img: '/images/projects/vwar.png',
+      img: '/images/projects/bitss.png',
       projectSkills: [
         { name: 'Python', icon: 'logos:python' },
         { name: 'Security', icon: 'mdi:security' },
