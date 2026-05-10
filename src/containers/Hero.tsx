@@ -40,7 +40,7 @@ const Hero = () => {
           variants={slideUp({ delay: 0.2 })}
           className="lg:col-span-7 space-y-8"
         >
-          <div className="space-y-4">
+          <div className="space-y-6">
             <motion.div 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -53,11 +53,16 @@ const Hero = () => {
                 </h2>
             </motion.div>
             
-            <h1 className="text-5xl md:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter">
-              {title.split(' ').map((word, i) => (
-                <span key={i} className="block">{word}</span>
-              ))}
-            </h1>
+            <div className="space-y-2">
+                <div className="flex flex-col items-start gap-4">
+                  <h1 className="text-4xl md:text-6xl font-black bg-blue-600 text-white px-6 py-2 rounded-2xl shadow-xl shadow-blue-100 w-fit leading-tight">
+                    T. M.
+                  </h1>
+                  <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-none tracking-tighter">
+                    Mehrab Hasan
+                  </h1>
+                </div>
+            </div>
           </div>
 
           <div className="h-[60px] md:h-[80px] flex items-center bg-gray-900 px-6 rounded-2xl w-fit shadow-2xl border-b-4 border-blue-600">
