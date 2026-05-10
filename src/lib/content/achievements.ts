@@ -73,7 +73,7 @@ export const achievementsSection: AchievementsSectionType = {
     },
     {
       title: 'AWS Introduction to Cloud Certificate',
-      date: 'August 16, 2025',
+      date: 'August 16, 2023',
       issuer: 'AWS Academy',
       desc: 'Comprehensive cloud computing certification covering AWS fundamentals.',
       certificate: '/certificates/2. AWS Crtificate.pdf',
