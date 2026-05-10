@@ -39,6 +39,7 @@ const Navbar = () => {
 
   return (
     <nav
+      suppressHydrationWarning
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4',
         scrolled || isOpen 
@@ -46,7 +47,7 @@ const Navbar = () => {
           : 'bg-transparent'
       )}
     >
-      <div className="w-full flex items-center relative min-h-[40px] px-4 md:px-12">
+      <div className="w-full flex items-center relative min-h-[40px] px-4 md:px-12" suppressHydrationWarning>
         {/* Logo moved slightly to the right with container padding */}
         <Link href="/" className="group shrink-0 relative z-30">
           <span className="text-3xl font-signature text-blue-600 hover:text-blue-700 transition-colors whitespace-nowrap">

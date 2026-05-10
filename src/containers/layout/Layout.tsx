@@ -5,11 +5,11 @@ import EmailSidebar from './EmailSidebar';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen" suppressHydrationWarning>
       <Navbar />
       <SocialSidebar />
       <EmailSidebar />
-      <main>{children}</main>
+      <main suppressHydrationWarning>{children}</main>
       <Footer />
     </div>
   );

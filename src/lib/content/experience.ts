@@ -5,7 +5,7 @@ export const experienceSection: ExperienceSectionType = {
   experiences: [
     {
       company: 'BFIN IT PVT. LTD., Bangladesh',
-      companyUrl: 'https://bfin.io',
+      companyUrl: 'https://bfinit.com/',
       role: 'Jr. Software Developer',
       started: 'August 2025',
       upto: 'Present',
@@ -20,7 +20,7 @@ export const experienceSection: ExperienceSectionType = {
     },
     {
       company: 'NSR DEV, Bangladesh',
-      companyUrl: '#',
+      companyUrl: 'https://nsrdev.com/',
       role: 'Django Backend Developer (Remote)',
       started: 'September 2025',
       upto: 'Present',
@@ -34,7 +34,7 @@ export const experienceSection: ExperienceSectionType = {
     },
     {
       company: 'PERPEX, India',
-      companyUrl: '#',
+      companyUrl: 'https://perpex.org/',
       role: 'Django (Python) Intern',
       started: 'July 2025',
       upto: 'September 2025',
@@ -48,7 +48,7 @@ export const experienceSection: ExperienceSectionType = {
     },
     {
       company: 'Robo Tech Valley, Bangladesh',
-      companyUrl: '#',
+      companyUrl: 'https://robotechvalley.com/',
       role: 'Robotics & Embedded System Engineer',
       started: 'May 2025',
       upto: 'July 2025',
@@ -62,7 +62,7 @@ export const experienceSection: ExperienceSectionType = {
     },
     {
       company: 'Greenity Foundation',
-      companyUrl: '#',
+      companyUrl: 'https://greenityfoundation.org/',
       role: 'Lead Web Developer',
       started: 'Jan 2022',
       upto: 'Feb 2023',
