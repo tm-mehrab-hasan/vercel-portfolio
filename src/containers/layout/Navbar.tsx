@@ -21,13 +21,11 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
       
-      // Progress calculation
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (window.scrollY / totalScroll) * 100;
       setScrollProgress(progress);
     };
 
-    // Intersection Observer for Active Sections
     const observerOptions = {
         root: null,
         rootMargin: '-20% 0px -70% 0px',
@@ -78,22 +76,17 @@ const Navbar = () => {
             : 'bg-white/40 backdrop-blur-sm border-white/20 py-4 shadow-none'
         )}
       >
-        {/* Scroll Progress Line */}
         <motion.div 
             className="absolute bottom-0 left-0 h-[2px] bg-blue-600 z-50"
             style={{ width: `${scrollProgress}%` }}
         />
 
-        <Link href="/" className="group flex items-center gap-2">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-200 group-hover:rotate-12 transition-transform">
-             <span className="font-black text-xs">M</span>
-          </div>
-          <span className="text-lg font-black tracking-tighter text-gray-900 hidden sm:block uppercase">
-            Mehrab<span className="text-blue-600">.</span>Hasan
+        <Link href="/" className="group">
+          <span className="text-3xl font-signature text-blue-600 hover:text-blue-700 transition-colors">
+            Mehrab Hasan
           </span>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-1 bg-gray-100/50 p-1 rounded-xl border border-gray-200/50">
           {navLinks.map((link) => {
             const id = link.url.split('#')[1];
@@ -127,7 +120,6 @@ const Navbar = () => {
                 {cta.title}
             </Button>
 
-            {/* Mobile Toggle */}
             <button
                 className="lg:hidden w-10 h-10 flex items-center justify-center bg-gray-900 text-white rounded-xl shadow-lg focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
@@ -137,7 +129,6 @@ const Navbar = () => {
             </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
             {isOpen && (
             <motion.div
