@@ -55,7 +55,7 @@ const Hero = () => {
 
             <div className="flex flex-col gap-2">
               <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-tight tracking-tighter">
-                Hi! I'm T. M.
+                Hi!  I'm T. M.
               </h1>
               <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-none tracking-tighter">
                 Mehrab Hasan

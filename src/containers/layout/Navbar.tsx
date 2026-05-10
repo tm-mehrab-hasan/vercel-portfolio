@@ -40,44 +40,49 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 w-full z-50 transition-all duration-500 px-4 md:px-8 py-4',
+        'fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4',
         scrolled || isOpen 
           ? 'bg-blue-50/90 backdrop-blur-xl shadow-lg shadow-blue-900/5 border-b border-blue-100' 
           : 'bg-transparent'
       )}
     >
-      <div className="max-w-[95%] mx-auto flex justify-between items-center">
-        <Link href="/" className="group shrink-0">
+      <div className="w-full flex items-center relative">
+        {/* Logo positioned at the far left */}
+        <Link href="/" className="group shrink-0 relative z-20">
           <span className="text-3xl font-signature text-blue-600 hover:text-blue-700 transition-colors whitespace-nowrap">
             Mehrab Hasan
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.url}
-              onClick={(e) => handleNavLinkClick(e, link.url)}
-              className="text-gray-600 hover:text-blue-600 transition-colors font-bold text-xs uppercase tracking-widest cursor-pointer whitespace-nowrap"
-            >
-              {link.name}
-            </a>
-          ))}
-          <Button href={cta.url} variant="outline" className="px-5 py-2 text-xs font-black uppercase tracking-widest rounded-xl border-2 whitespace-nowrap" sameTab={cta.sameTab}>
-            {cta.title}
-          </Button>
+        {/* Desktop Nav centered in the original max-w-7xl boundary */}
+        <div className="hidden lg:flex flex-grow items-center justify-center pointer-events-none">
+            <div className="max-w-7xl w-full flex items-center justify-end gap-6 pointer-events-auto">
+                {navLinks.map((link) => (
+                    <a
+                    key={link.name}
+                    href={link.url}
+                    onClick={(e) => handleNavLinkClick(e, link.url)}
+                    className="text-gray-600 hover:text-blue-600 transition-colors font-bold text-xs uppercase tracking-widest cursor-pointer whitespace-nowrap"
+                    >
+                    {link.name}
+                    </a>
+                ))}
+                <Button href={cta.url} variant="outline" className="px-5 py-2 text-xs font-black uppercase tracking-widest rounded-xl border-2 whitespace-nowrap" sameTab={cta.sameTab}>
+                    {cta.title}
+                </Button>
+            </div>
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="lg:hidden w-10 h-10 flex items-center justify-center bg-gray-900 text-white rounded-xl shadow-lg focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          <Icon icon={isOpen ? 'akar-icons:cross' : 'akar-icons:three-line-horizontal'} width={20} />
-        </button>
+        <div className="flex-grow flex justify-end lg:hidden relative z-20">
+            <button
+                className="w-10 h-10 flex items-center justify-center bg-gray-900 text-white rounded-xl shadow-lg focus:outline-none"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle menu"
+            >
+                <Icon icon={isOpen ? 'akar-icons:cross' : 'akar-icons:three-line-horizontal'} width={20} />
+            </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
