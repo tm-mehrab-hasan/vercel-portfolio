@@ -28,7 +28,7 @@ const Skills = () => {
           const relatedSkills = getSkillsByCategory(domainMapping[domain.id] || []);
           
           return (
-            <div key={domain.id} className="space-y-12">
+            <div key={domain.id} className="space-y-6">
               <div
                 className={`flex flex-col ${
                   index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
@@ -57,9 +57,9 @@ const Skills = () => {
               </div>
 
               {/* Related Expertise Grid */}
-              <div className="pt-8">
-                <div className="flex items-center gap-4 mb-8">
-                  <h4 className="text-lg font-bold text-gray-400 uppercase tracking-widest">
+              <div className="pt-2">
+                <div className="flex items-center gap-4 mb-4">
+                  <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest">
                     Technologies
                   </h4>
                   <div className="h-[1px] bg-gray-100 flex-grow" />
