@@ -114,9 +114,21 @@ const Publications = () => {
           <Button
             onClick={() => {
               if (showAll) {
-                document.getElementById('publications')?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                setShowAll(false);
+                setTimeout(() => {
+                  const element = document.getElementById('publications');
+                  if (element) {
+                    const rect = element.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    window.scrollTo({
+                      top: scrollTop + rect.bottom - window.innerHeight + 100,
+                      behavior: 'smooth'
+                    });
+                  }
+                }, 100);
+              } else {
+                setShowAll(true);
               }
-              setShowAll(!showAll);
             }}
             variant="outline"
             className="group px-10 py-4 rounded-2xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
