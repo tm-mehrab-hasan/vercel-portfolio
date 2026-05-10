@@ -72,6 +72,8 @@ export type EducationType = {
   duration: string;
   desc: string;
   grade?: string;
+  specialization?: string[];
+  icon?: string;
 };
 
 export type AchievementType = {
