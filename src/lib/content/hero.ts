@@ -4,11 +4,11 @@ export const heroSection: HeroSectionType = {
   title: 'T. M. Mehrab Hasan',
   subtitle: 'Computer Science Engineer & Data Scientist.',
   tagline: [
-    'CSE & Data Science Specialist',
-    'AI-Driven Systems Engineer',
+    'Software Engineer & Data Scientist',
+    'AI-Driven Systems Architect',
     'Full-Stack Developer',
     'Research Enthusiast',
-    'Cyber-Physical Systems Architect',
+    'Cyber-Physical Systems Expert',
   ],
   description:
     'Bridging Computer Science with Data Science to engineer intelligent, scalable, and secure systems. I specialize in integrating AI and Machine Learning into robust software architectures and Cyber-Physical Systems (CPS) to solve complex real-world challenges.',
