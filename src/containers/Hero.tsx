@@ -53,14 +53,19 @@ const Hero = () => {
                 </h2>
             </motion.div>
             
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-tight tracking-tighter">
-              {title}
-            </h1>
+            <div className="flex flex-col gap-2">
+              <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-tight tracking-tighter">
+                T. M.
+              </h1>
+              <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-none tracking-tighter">
+                Mehrab Hasan
+              </h1>
+            </div>
           </div>
 
           <div className="h-[60px] md:h-[80px] flex items-center bg-blue-600 px-6 rounded-2xl w-fit shadow-2xl shadow-blue-200 border-b-4 border-blue-800">
             <div className="flex items-center gap-3 text-white font-mono text-lg md:text-2xl">
-                <span className="text-blue-200">$</span>
+                <span className="text-blue-100">$</span>
                 <Typewriter words={tagline} />
                 <span className="w-3 h-6 bg-white animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
             </div>
