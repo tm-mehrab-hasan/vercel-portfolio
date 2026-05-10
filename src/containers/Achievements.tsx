@@ -1,14 +1,17 @@
 'use client';
 import { achievementsSection } from '@/lib/content/achievements';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getSectionAnimation, projectVariants } from '@/lib/utils/animations';
+import { getSectionAnimation } from '@/lib/utils/animations';
 import Icon from '@/components/Icon';
 import { useState, useMemo } from 'react';
 import Button from '@/components/Button';
+import Image from 'next/image';
+import ImageModal from '@/components/ImageModal';
 
 const Achievements = () => {
   const { title, achievements } = achievementsSection;
   const [showAll, setShowAll] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
 
   const sortedAchievements = useMemo(() => {
     return [...achievements].sort((a, b) => {
@@ -17,6 +20,14 @@ const Achievements = () => {
   }, [achievements]);
 
   const displayedAchievements = showAll ? sortedAchievements : sortedAchievements.slice(0, 6);
+
+  const handleViewCertificate = (certPath: string, title: string) => {
+    if (certPath.toLowerCase().endsWith('.pdf')) {
+      window.open(certPath, '_blank');
+    } else {
+      setSelectedImage({ src: certPath, title });
+    }
+  };
 
   return (
     <motion.section
@@ -34,7 +45,7 @@ const Achievements = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         <AnimatePresence mode="popLayout">
-          {displayedAchievements.map((ach, i) => (
+          {displayedAchievements.map((ach) => (
             <motion.div
               key={ach.title}
               layout
@@ -47,9 +58,41 @@ const Achievements = () => {
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
               
-              <div className="relative z-10">
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                  <Icon icon="akar-icons:ribbon" width={32} />
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Visual Header (Thumbnail or Icon) */}
+                <div className="mb-6 relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:shadow-lg transition-all duration-500">
+                  {ach.certificate ? (
+                    ach.certificate.toLowerCase().endsWith('.pdf') ? (
+                      <div className="flex flex-col items-center gap-2">
+                        <Icon icon="mdi:file-pdf-box" width={64} className="text-red-500" />
+                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">PDF Certificate</span>
+                      </div>
+                    ) : (
+                      <Image
+                        src={ach.certificate}
+                        alt={ach.title}
+                        fill
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                      />
+                    )
+                  ) : (
+                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:rotate-12 transition-transform duration-500">
+                      <Icon icon="akar-icons:ribbon" width={32} />
+                    </div>
+                  )}
+                  
+                  {/* Overlay for items with certificates */}
+                  {ach.certificate && (
+                    <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/40 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <button 
+                            onClick={() => handleViewCertificate(ach.certificate!, ach.title)}
+                            className="bg-white text-blue-600 px-4 py-2 rounded-xl text-xs font-black flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl"
+                        >
+                            <Icon icon="akar-icons:eye" width={14} />
+                            View Certificate
+                        </button>
+                    </div>
+                  )}
                 </div>
                 
                 <div className="flex items-center gap-2 mb-3">
@@ -58,19 +101,32 @@ const Achievements = () => {
                     </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">
                     {ach.title}
                 </h3>
                 
                 {ach.issuer && (
-                  <p className="text-sm font-bold text-gray-400 mb-4 uppercase tracking-tighter italic">
+                  <p className="text-[11px] font-bold text-gray-400 mb-4 uppercase tracking-tighter italic">
                     {ach.issuer}
                   </p>
                 )}
                 
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-6">
                     {ach.desc}
                 </p>
+
+                {ach.certificate && (
+                    <div className="mt-auto pt-4 border-t border-gray-50">
+                        <button 
+                            onClick={() => handleViewCertificate(ach.certificate!, ach.title)}
+                            className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-2 group/btn"
+                        >
+                            <Icon icon={ach.certificate.toLowerCase().endsWith('.pdf') ? "mdi:file-pdf-outline" : "mdi:image-outline"} width={16} />
+                            {ach.certificate.toLowerCase().endsWith('.pdf') ? 'Open PDF Document' : 'View Image Certificate'}
+                            <Icon icon="akar-icons:arrow-right" width={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                        </button>
+                    </div>
+                )}
               </div>
             </motion.div>
           ))}
@@ -97,6 +153,14 @@ const Achievements = () => {
           </Button>
         </div>
       )}
+
+      {/* Image Modal for View */}
+      <ImageModal 
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        imageSrc={selectedImage?.src || ''}
+        title={selectedImage?.title || ''}
+      />
     </motion.section>
   );
 };

@@ -77,6 +77,7 @@ export type AchievementType = {
   date: string;
   issuer?: string;
   desc?: string;
+  certificate?: string;
 };
 
 export type TestimonialType = {
