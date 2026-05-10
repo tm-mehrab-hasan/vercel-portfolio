@@ -2,18 +2,17 @@ import { HeroSectionType } from '../types/sections';
 
 export const heroSection: HeroSectionType = {
   title: 'T. M. Mehrab Hasan',
-  subtitle: 'Engineering intelligent, connected systems.',
+  subtitle: 'Computer Science Engineer & Data Scientist.',
   tagline: [
-    'AI-Driven IoT & Robotics Engineer',
+    'CSE & Data Science Specialist',
+    'AI-Driven Systems Engineer',
     'Full-Stack Developer',
-    'IoT & Robotics Engineer',
-    'Full Stack Web Developer',
-    'AI & ML Enthusiast',
     'Research Enthusiast',
+    'Cyber-Physical Systems Architect',
   ],
   description:
-    'Engineering intelligent, connected systems by integrating AI, IoT, and scalable web technologies to solve real-world problems. I specialize in building end-to-end systems — from embedded hardware to AI-powered platforms.',
-  specialText: 'Currently focused on BITSS VWAR as a Jr. Software Developer.',
+    'Bridging Computer Science with Data Science to engineer intelligent, scalable, and secure systems. I specialize in integrating AI and Machine Learning into robust software architectures and Cyber-Physical Systems (CPS) to solve complex real-world challenges.',
+  specialText: 'Currently focused on Enterprise Security & AI-driven Research.',
   ctas: [
     {
       title: 'View My Work',
