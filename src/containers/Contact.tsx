@@ -19,31 +19,27 @@ const Contact = () => {
     setIsSending(true);
     const toastId = toast.loading('Sending message...');
 
-    // Change this to your NEW Admin Template ID after creating it in EmailJS
+    const SERVICE_ID = 'service_jtcgaaa';
     const ADMIN_TEMPLATE_ID = 'template_v728pin'; 
-    // Change this if you have a separate Auto-Reply template
-    const AUTO_REPLY_TEMPLATE_ID = 'template_v728pin'; 
+    const AUTO_REPLY_TEMPLATE_ID = 'template_mv1zoyc'; 
 
     try {
       emailjs.init('wDYLZEKfApFLOykrr');
 
-      // 1. Send message TO YOU (Admin)
+      // 1. Send message TO YOU (Admin Notification)
       await emailjs.sendForm(
-        'service_jtcgaaa',
+        SERVICE_ID,
         ADMIN_TEMPLATE_ID,
         formRef.current
       );
 
-      // 2. (Optional) Trigger Auto-Reply if it's a different template
-      // If template_v728pin is your auto-reply, it's already fired.
-      // If you create a separate one, uncomment below:
-      /*
+      // 2. Send AUTO-REPLY TO USER (Since Auto-Reply tab is a paid feature)
+      // We fire this immediately after the first one
       await emailjs.sendForm(
-        'service_jtcgaaa',
+        SERVICE_ID,
         AUTO_REPLY_TEMPLATE_ID,
         formRef.current
       );
-      */
 
       toast.success('Message sent! I will get back to you soon.', { id: toastId });
       formRef.current.reset();
