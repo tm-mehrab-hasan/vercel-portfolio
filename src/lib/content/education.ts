@@ -11,6 +11,7 @@ export const educationSection: EducationSectionType = {
       desc: 'Graduated with CGPA 3.71/4.00 in IoT & Robotics Engineering from the Department of IoT & Robotics Engineering. Specialized in intelligent systems, embedded programming, and automation technologies.',
       grade: '3.71 / 4.00',
       icon: '/images/uftb.png',
+      url: 'https://uftb.ac.bd/',
       specialization: ['IoT Systems', 'Robotics', 'Embedded Systems', 'Machine Learning'],
     },
     {
@@ -21,6 +22,7 @@ export const educationSection: EducationSectionType = {
       desc: 'Completed HSC with GPA 5.00/5.00 in Science from Dhaka Board, Bangladesh. Strong foundation in mathematics, physics, and chemistry.',
       grade: '5.00 / 5.00',
       icon: '/images/ndc.png',
+      url: 'https://ndc.edu.bd/',
       specialization: ['Science', 'Mathematics', 'Physics'],
     },
     {
@@ -31,6 +33,7 @@ export const educationSection: EducationSectionType = {
       desc: 'Completed SSC with GPA 5.00/5.00 in Science from Dhaka Board, Bangladesh. Developed early interest in technology and engineering.',
       grade: '5.00 / 5.00',
       icon: '/images/mubc.png',
+      url: 'https://mubc.edu.bd/',
       specialization: ['Science Foundation', 'Academic Excellence'],
     },
   ],

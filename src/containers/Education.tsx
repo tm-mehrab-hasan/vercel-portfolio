@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { getSectionAnimation } from '@/lib/utils/animations';
 import Icon from '@/components/Icon';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Education = () => {
   const { title, education } = educationSection;
@@ -34,7 +35,11 @@ const Education = () => {
             
             {/* Left Side: School Info & Icon/Logo */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6 md:w-1/3 shrink-0">
-                <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-md border border-gray-50 overflow-hidden relative p-4">
+                <Link 
+                    href={edu.url || '#'} 
+                    target="_blank" 
+                    className={`w-24 h-24 bg-white rounded-3xl flex items-center justify-center transition-all duration-500 shadow-md border border-gray-50 overflow-hidden relative p-4 ${edu.url ? 'hover:scale-110 hover:rotate-6 hover:shadow-xl hover:border-blue-200' : 'cursor-default'}`}
+                >
                     {edu.icon && edu.icon.startsWith('/') ? (
                         <Image 
                             src={edu.icon} 
@@ -45,16 +50,27 @@ const Education = () => {
                     ) : (
                         <Icon icon={edu.icon || 'mdi:school-outline'} width={40} className="text-blue-600" />
                     )}
-                </div>
+                </Link>
                 <div>
                     <span className="text-blue-600 font-black text-xs uppercase tracking-[0.2em] mb-2 block">
                         {edu.duration}
                     </span>
-                    <h3 className="text-2xl font-black text-gray-900 leading-tight mb-2">
-                        {edu.schoolName}
-                    </h3>
+                    <div className="flex flex-col gap-2">
+                        {edu.url ? (
+                            <Link href={edu.url} target="_blank" className="group/link">
+                                <h3 className="text-2xl font-black text-gray-900 leading-tight group-hover/link:text-blue-600 transition-colors inline-flex items-center gap-2">
+                                    {edu.schoolName}
+                                    <Icon icon="akar-icons:link-out" width={16} className="text-gray-300 group-hover/link:text-blue-400" />
+                                </h3>
+                            </Link>
+                        ) : (
+                            <h3 className="text-2xl font-black text-gray-900 leading-tight">
+                                {edu.schoolName}
+                            </h3>
+                        )}
+                    </div>
                     {edu.grade && (
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-2xl text-white shadow-xl shadow-gray-200">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 mt-4 bg-gray-900 rounded-2xl text-white shadow-xl shadow-gray-200">
                             <Icon icon="mdi:star-circle" width={18} className="text-yellow-400" />
                             <span className="text-xs font-black uppercase tracking-wider">{edu.grade}</span>
                         </div>
