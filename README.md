@@ -4,6 +4,8 @@ An AI-driven IoT & Robotics Engineer and Full-Stack Developer portfolio built wi
 
 [![T. M. Mehrab Hasan Portfolio](public/images/og-preview.png)](https://tm-mehrab-hasan.vercel.app/)
 
+The Portfolio Website is live at - {(T. M. Mehrab Hasan)(https://tm-mehrab-hasan.vercel.app/)}
+
 ## 🚀 Overview
 
 Engineering intelligent, connected systems by integrating AI, IoT, and scalable web technologies to solve real-world problems. This portfolio showcases my journey, projects, and expertise in building end-to-end systems — from embedded hardware to AI-powered platforms.
