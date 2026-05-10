@@ -41,18 +41,18 @@ const Hero = () => {
           className="lg:col-span-7 space-y-8"
         >
           <div className="space-y-6">
-            <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 }}
-                className="flex items-center gap-3"
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              className="flex items-center gap-3"
             >
-                <span className="w-12 h-[2px] bg-blue-600 rounded-full" />
-                <h2 className="text-blue-600 font-black text-xs md:text-sm tracking-[0.4em] uppercase">
-                    Architecting the Future
-                </h2>
+              <span className="w-12 h-[2px] bg-blue-600 rounded-full" />
+              <h2 className="text-blue-600 font-black text-xs md:text-sm tracking-[0.4em] uppercase">
+                Architecting the Future
+              </h2>
             </motion.div>
-            
+
             <div className="flex flex-col gap-2">
               <h1 className="text-5xl md:text-7xl font-black text-gray-900 leading-tight tracking-tighter">
                 T. M.
@@ -65,14 +65,14 @@ const Hero = () => {
 
           <div className="h-[50px] md:h-[60px] flex items-center bg-blue-600 px-6 rounded-2xl w-fit shadow-2xl shadow-blue-200 border-b-4 border-blue-800">
             <div className="flex items-center gap-3 text-white font-mono text-base md:text-lg">
-                <span className="text-blue-100 font-bold">$</span>
-                <Typewriter 
-                  words={tagline} 
-                  className="text-white font-bold" 
-                  typingSpeed={40} 
-                  deletingSpeed={20} 
-                  pauseTime={1000}
-                />
+              <span className="text-blue-100 font-bold">$</span>
+              <Typewriter
+                words={tagline}
+                className="text-white font-bold"
+                typingSpeed={40}
+                deletingSpeed={30}
+                pauseTime={1000}
+              />
             </div>
           </div>
 
@@ -82,33 +82,33 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 pt-4">
             <div className="flex flex-wrap gap-4">
-                {ctas?.map((cta, i) => (
+              {ctas?.map((cta, i) => (
                 <Button
-                    key={cta.title}
-                    href={cta.url}
-                    variant={i === 0 ? 'primary' : 'outline'}
-                    sameTab={cta.sameTab}
-                    onClick={(e) => handleCtaClick(e, cta.url)}
-                    className="px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl hover:scale-105 transition-transform"
+                  key={cta.title}
+                  href={cta.url}
+                  variant={i === 0 ? 'primary' : 'outline'}
+                  sameTab={cta.sameTab}
+                  onClick={(e) => handleCtaClick(e, cta.url)}
+                  className="px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl hover:scale-105 transition-transform"
                 >
-                    {cta.title}
+                  {cta.title}
                 </Button>
-                ))}
+              ))}
             </div>
 
             {/* Integrated Socials */}
             <div className="flex items-center gap-4 py-2 border-l-2 border-gray-100 pl-8">
-                {socialLinks.slice(0, 3).map((social) => (
-                    <Link 
-                        key={social.name} 
-                        href={social.url} 
-                        target="_blank"
-                        className="text-gray-400 hover:text-blue-600 transition-all hover:scale-125 p-2 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg"
-                        title={social.name}
-                    >
-                        <Icon icon={social.icon} width={22} />
-                    </Link>
-                ))}
+              {socialLinks.slice(0, 3).map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  className="text-gray-400 hover:text-blue-600 transition-all hover:scale-125 p-2 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg"
+                  title={social.name}
+                >
+                  <Icon icon={social.icon} width={22} />
+                </Link>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -123,30 +123,30 @@ const Hero = () => {
           {/* Decorative HUD Circle */}
           <div className="absolute inset-0 border-[20px] border-blue-50 rounded-full animate-[spin_20s_linear_infinite] opacity-50" />
           <div className="absolute inset-4 border-[2px] border-dashed border-blue-200 rounded-full animate-[spin_30s_linear_infinite_reverse] opacity-50" />
-          
+
           <div className="relative z-10 scale-110 drop-shadow-[0_35px_35px_rgba(37,99,235,0.15)]">
             <ShowLottie path="/lotties/coding.json" className="w-full max-w-lg" />
           </div>
 
           {/* Floating Tech Badges */}
-          <motion.div 
+          <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-10 right-0 bg-white p-4 rounded-[2rem] shadow-2xl border border-gray-50 flex items-center gap-4 z-20"
           >
             <div className="w-10 h-10 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                <Icon icon="mdi:robot" width={24} />
+              <Icon icon="mdi:robot" width={24} />
             </div>
             <div>
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none">Status</p>
-                <p className="text-gray-900 font-bold text-xs mt-1 uppercase">Engineering_Intelligent_Systems</p>
+              <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-none">Status</p>
+              <p className="text-gray-900 font-bold text-xs mt-1 uppercase">Engineering_Intelligent_Systems</p>
             </div>
           </motion.div>
         </motion.div>
       </div>
 
       {/* Scroll Down Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
