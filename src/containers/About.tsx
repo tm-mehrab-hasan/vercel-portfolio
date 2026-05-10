@@ -66,15 +66,15 @@ const About = () => {
               {/* HUD Elements */}
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 shadow-2xl">
-                <div className="flex justify-between items-center text-white">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-black uppercase tracking-widest leading-none">T. M. Mehrab Hasan</span>
-                    <span className="text-[8px] font-medium text-blue-200 mt-1 uppercase">IoT & Software Engineer</span>
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 p-3 md:p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 shadow-2xl overflow-hidden">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-white">
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[10px] md:text-[11px] font-black uppercase tracking-widest leading-none truncate">T. M. Mehrab Hasan</span>
+                    <span className="text-[8px] md:text-[9px] font-medium text-blue-200 mt-1 uppercase truncate">IoT & Software Engineer</span>
                   </div>
-                  <div className="flex items-center gap-2 px-2 py-1 bg-green-500/20 rounded-full border border-green-500/30">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-[8px] font-black tracking-tighter">LIVE_LINK_ACTIVE</span>
+                  <div className="flex items-center gap-2 px-2 py-1 bg-green-500/20 rounded-full border border-green-500/30 shrink-0">
+                    <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-green-400 animate-pulse" />
+                    <span className="text-[7px] md:text-[8px] font-black tracking-tighter">LIVE_LINK_ACTIVE</span>
                   </div>
                 </div>
               </div>
@@ -136,7 +136,7 @@ const About = () => {
             transition={{ delay: 0.2 * i }}
             className="p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-white hover:shadow-2xl transition-all duration-500 group"
           >
-            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
               <Icon icon={phi.icon} width={24} />
             </div>
             <h5 className="text-lg font-bold text-gray-900 mb-3">{phi.title}</h5>
