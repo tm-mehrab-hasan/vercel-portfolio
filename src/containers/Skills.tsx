@@ -16,12 +16,6 @@ const Skills = () => {
     tools: ['tools'],
   };
 
-  const totalStats = {
-    total: softwareSkills.length,
-    avgExp: Math.round(softwareSkills.reduce((acc, curr) => acc + parseInt(curr.experience), 0) / softwareSkills.length),
-    specialty: softwareSkills.filter((s) => s.featured).length,
-  };
-
   return (
     <section id="skills" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="flex items-center gap-4 mb-20">
@@ -66,11 +60,11 @@ const Skills = () => {
               <div className="pt-8">
                 <div className="flex items-center gap-4 mb-8">
                   <h4 className="text-lg font-bold text-gray-400 uppercase tracking-widest">
-                    Technical Expertise
+                    Technologies
                   </h4>
                   <div className="h-[1px] bg-gray-100 flex-grow" />
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
                   {relatedSkills.map((skill) => (
                     <SkillCard key={skill.name} {...skill} />
                   ))}
@@ -79,25 +73,6 @@ const Skills = () => {
             </div>
           );
         })}
-      </div>
-
-      {/* Global Summary Stats */}
-      <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 bg-gray-900 rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[100px] rounded-full" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-600/10 blur-[100px] rounded-full" />
-        
-        <div className="text-center relative z-10">
-          <div className="text-5xl font-black text-blue-400 mb-2">{totalStats.total}</div>
-          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Technologies</div>
-        </div>
-        <div className="text-center relative z-10 border-y md:border-y-0 md:border-x border-gray-800 py-8 md:py-0">
-          <div className="text-5xl font-black text-blue-400 mb-2">{totalStats.avgExp}+</div>
-          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Avg Years Experience</div>
-        </div>
-        <div className="text-center relative z-10">
-          <div className="text-5xl font-black text-blue-400 mb-2">{totalStats.specialty}</div>
-          <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Core Specialties</div>
-        </div>
       </div>
     </section>
   );
