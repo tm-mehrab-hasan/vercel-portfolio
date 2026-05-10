@@ -137,7 +137,12 @@ const Achievements = () => {
       {sortedAchievements.length > 6 && (
         <div className="mt-16 flex justify-center">
           <Button
-            onClick={() => setShowAll(!showAll)}
+            onClick={() => {
+              if (showAll) {
+                document.getElementById('achievements')?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+              }
+              setShowAll(!showAll);
+            }}
             variant="outline"
             className="group px-10 py-4 rounded-2xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
           >
