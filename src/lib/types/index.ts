@@ -89,6 +89,7 @@ export type TestimonialType = {
   name: string;
   role: string;
   feedback: string;
+  relationship?: string;
 };
 
 export type ActivityType = {
@@ -96,6 +97,7 @@ export type ActivityType = {
   role: string;
   duration: string;
   desc: string;
+  icon?: string;
 };
 
 export type SkillType = { name: string; icon: string };
