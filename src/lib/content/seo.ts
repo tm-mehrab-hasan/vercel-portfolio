@@ -3,8 +3,8 @@ export const seoData = {
   description:
     'AI-Driven IoT & Robotics Engineer and Full-Stack Developer specializing in intelligent systems, web development, and machine learning solutions.',
   author: 'T. M. Mehrab Hasan',
-  image: 'https://tm-mehrab-hasan.github.io/images/og-preview.png',
-  url: 'https://tm-mehrab-hasan.github.io/',
+  image: 'https://tm-mehrab-hasan.vercel.app/images/og-preview.png',
+  url: 'https://tm-mehrab-hasan.vercel.app/',
   keywords: [
     'Mehrab Hasan',
     'T. M. Mehrab Hasan',
