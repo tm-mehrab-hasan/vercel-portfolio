@@ -69,9 +69,9 @@ const Hero = () => {
                 <Typewriter 
                   words={tagline} 
                   className="text-white font-bold" 
-                  typingSpeed={60} 
-                  deletingSpeed={30} 
-                  pauseTime={1500}
+                  typingSpeed={40} 
+                  deletingSpeed={20} 
+                  pauseTime={1000}
                 />
             </div>
           </div>

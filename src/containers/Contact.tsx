@@ -33,8 +33,7 @@ const Contact = () => {
         formRef.current
       );
 
-      // 2. Send AUTO-REPLY TO USER (Since Auto-Reply tab is a paid feature)
-      // We fire this immediately after the first one
+      // 2. Send AUTO-REPLY TO USER (Free tier manual fire)
       await emailjs.sendForm(
         SERVICE_ID,
         AUTO_REPLY_TEMPLATE_ID,
@@ -81,7 +80,6 @@ const Contact = () => {
       {...getSectionAnimation}
       className="py-24 px-6 relative overflow-hidden"
     >
-      {/* Decorative Background */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-30 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-200 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-200 rounded-full blur-[120px]" />
