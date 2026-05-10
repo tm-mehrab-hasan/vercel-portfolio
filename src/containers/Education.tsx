@@ -3,6 +3,7 @@ import { educationSection } from '@/lib/content/education';
 import { motion } from 'framer-motion';
 import { getSectionAnimation } from '@/lib/utils/animations';
 import Icon from '@/components/Icon';
+import Image from 'next/image';
 
 const Education = () => {
   const { title, education } = educationSection;
@@ -31,10 +32,19 @@ const Education = () => {
             {/* Background Accent */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[5rem] -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700 opacity-50" />
             
-            {/* Left Side: School Info & Icon */}
+            {/* Left Side: School Info & Icon/Logo */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6 md:w-1/3 shrink-0">
-                <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center text-blue-600 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-sm border border-blue-100">
-                    <Icon icon={edu.icon || 'mdi:school-outline'} width={40} />
+                <div className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-md border border-gray-50 overflow-hidden relative p-4">
+                    {edu.icon && edu.icon.startsWith('/') ? (
+                        <Image 
+                            src={edu.icon} 
+                            alt={edu.schoolName}
+                            fill
+                            className="object-contain p-2"
+                        />
+                    ) : (
+                        <Icon icon={edu.icon || 'mdi:school-outline'} width={40} className="text-blue-600" />
+                    )}
                 </div>
                 <div>
                     <span className="text-blue-600 font-black text-xs uppercase tracking-[0.2em] mb-2 block">
