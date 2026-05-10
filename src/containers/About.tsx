@@ -60,17 +60,21 @@ const About = () => {
                 src={img}
                 alt="Mehrab Hasan"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                className="object-cover transition-all duration-700 hover:scale-105 group-hover:grayscale-0 grayscale"
               />
               
               {/* HUD Elements */}
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
+              <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 shadow-2xl">
                 <div className="flex justify-between items-center text-white">
-                  <span className="text-[10px] font-black uppercase tracking-widest">T. M. Mehrab Hasan</span>
-                  <div className="flex gap-2">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-black uppercase tracking-widest leading-none">T. M. Mehrab Hasan</span>
+                    <span className="text-[8px] font-medium text-blue-200 mt-1 uppercase">IoT & Software Engineer</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-2 py-1 bg-green-500/20 rounded-full border border-green-500/30">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-[10px] font-bold">ACTIVE_SYSTEM</span>
+                    <span className="text-[8px] font-black tracking-tighter">LIVE_LINK_ACTIVE</span>
                   </div>
                 </div>
               </div>
