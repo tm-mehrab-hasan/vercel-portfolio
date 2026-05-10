@@ -63,11 +63,10 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="h-[60px] md:h-[80px] flex items-center bg-blue-600 px-6 rounded-2xl w-fit shadow-2xl shadow-blue-200 border-b-4 border-blue-800">
-            <div className="flex items-center gap-3 text-white font-mono text-lg md:text-2xl">
-                <span className="text-blue-100">$</span>
-                <Typewriter words={tagline} />
-                <span className="w-3 h-6 bg-white animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+          <div className="h-[50px] md:h-[60px] flex items-center bg-blue-600 px-6 rounded-2xl w-fit shadow-2xl shadow-blue-200 border-b-4 border-blue-800">
+            <div className="flex items-center gap-3 text-white font-mono text-base md:text-lg">
+                <span className="text-blue-100 font-bold">$</span>
+                <Typewriter words={tagline} className="text-white font-bold" />
             </div>
           </div>
 

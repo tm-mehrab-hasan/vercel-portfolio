@@ -1,12 +1,13 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface TypewriterProps {
   words: string[];
   typingSpeed?: number;
   deletingSpeed?: number;
   pauseTime?: number;
+  className?: string;
 }
 
 const Typewriter = ({
@@ -14,6 +15,7 @@ const Typewriter = ({
   typingSpeed = 100,
   deletingSpeed = 50,
   pauseTime = 2000,
+  className = "",
 }: TypewriterProps) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
@@ -48,13 +50,13 @@ const Typewriter = ({
   }, [currentText, isDeleting, currentWordIndex, words, typingSpeed, deletingSpeed, pauseTime]);
 
   return (
-    <div className="flex items-center">
-      <h3 className="text-3xl md:text-5xl font-semibold text-gray-500 leading-tight min-h-[1.2em] font-mono">
+    <div className={`flex items-center ${className}`}>
+      <h3 className="leading-tight min-h-[1.2em] font-mono whitespace-nowrap">
         {currentText}
         <motion.span
           animate={{ opacity: [0, 1, 0] }}
           transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
-          className="inline-block w-[3px] h-[0.9em] bg-blue-600 ml-1 align-middle"
+          className="inline-block w-[2px] h-[0.8em] bg-current ml-1 align-middle"
         />
       </h3>
     </div>
