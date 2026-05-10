@@ -23,7 +23,6 @@ const Projects = () => {
       return project.category.toLowerCase().includes(filter);
     });
 
-    // Prioritize projects with links (url not '#' or empty)
     return [...filtered].sort((a, b) => {
       const aHasLink = a.url && a.url !== '#';
       const bHasLink = b.url && b.url !== '#';
@@ -41,7 +40,7 @@ const Projects = () => {
       {...getSectionAnimation}
       className="py-24 px-6 max-w-7xl mx-auto"
     >
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16">
         <div className="flex items-center gap-4 flex-grow">
           <h2 className="text-3xl font-bold text-gray-900 whitespace-nowrap">{title}</h2>
           <div className="h-[1px] bg-gray-300 flex-grow max-w-xs" />
@@ -70,10 +69,10 @@ const Projects = () => {
 
       <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10"
       >
         <AnimatePresence mode="popLayout">
-          {displayedProjects.map((project, i) => (
+          {displayedProjects.map((project) => (
             <motion.div
               key={project.id}
               layout
@@ -81,13 +80,13 @@ const Projects = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
-              className="group flex flex-col h-full"
+              className="group flex flex-col h-full bg-white rounded-3xl border border-gray-100 p-4 transition-all duration-500 hover:shadow-2xl hover:border-blue-100"
             >
-              {/* Project Visual Container - Fixed aspect ratio for all */}
-              <div className="mb-6 h-full aspect-video">
+              {/* Project Visual Container - Strictly fixed height */}
+              <div className="mb-6 h-[220px] w-full relative">
                 {(project.id === 'baazar-x' || project.id === 'movie' || project.id === 'portfolio-v1' || (project.url && project.url !== '#')) ? (
-                  <BrowserFrame url={project.url} className="h-full group-hover:-translate-y-2 transition-transform duration-500 shadow-xl">
-                    <div className="relative w-full h-full bg-gray-100 flex items-center justify-center overflow-hidden">
+                  <BrowserFrame url={project.url} className="h-full group-hover:-translate-y-2 transition-transform duration-500 shadow-lg">
+                    <div className="relative w-full h-full bg-gray-50 flex items-center justify-center overflow-hidden">
                       {project.img ? (
                         <Image
                           src={project.img}
@@ -97,93 +96,92 @@ const Projects = () => {
                         />
                       ) : (
                          <div className="flex flex-col items-center gap-4">
-                            <Icon icon={project.mainIcon || 'akar-icons:globe'} width={60} style={{ color: project.color }} className="animate-pulse" />
-                            <span className="text-xs font-mono text-gray-400">Live Preview Available</span>
+                            <Icon icon={project.mainIcon || 'akar-icons:globe'} width={48} style={{ color: project.color }} className="animate-pulse" />
+                            <span className="text-[10px] font-mono text-gray-400">Live Preview Available</span>
                          </div>
                       )}
                       <div
-                        className="absolute inset-0 opacity-10"
+                        className="absolute inset-0 opacity-5"
                         style={{ backgroundColor: project.color }}
                       />
                     </div>
                   </BrowserFrame>
                 ) : (
-                  <div className="relative h-full w-full rounded-2xl overflow-hidden bg-white border border-gray-100 group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center p-12 shadow-md group-hover:shadow-xl">
+                  <div className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-50 border border-gray-50 group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center p-8">
                     <div
                       className="absolute inset-0 opacity-5"
                       style={{ backgroundColor: project.color }}
                     />
                     <div
-                      className="w-20 h-20 rounded-3xl flex items-center justify-center shadow-lg relative z-10 group-hover:rotate-12 transition-transform duration-500"
+                      className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md relative z-10 group-hover:rotate-12 transition-transform duration-500"
                       style={{ backgroundColor: project.color + '20', color: project.color }}
                     >
-                      <Icon icon={project.mainIcon || 'akar-icons:plus'} width={40} />
+                      <Icon icon={project.mainIcon || 'akar-icons:plus'} width={32} />
                     </div>
 
-                    {/* Decorative geometric shapes */}
-                    <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ backgroundColor: project.color }} />
-                    <div className="absolute -bottom-10 -left-10 w-32 h-32 rounded-full blur-3xl opacity-20" style={{ backgroundColor: project.color }} />
+                    <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full blur-3xl opacity-20" style={{ backgroundColor: project.color }} />
+                    <div className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full blur-3xl opacity-20" style={{ backgroundColor: project.color }} />
                     
                     <div className="absolute bottom-4 left-4 right-4 text-center">
-                        <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Case Study</span>
+                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Case Study</span>
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* Project Info */}
-              <div className="flex flex-col flex-grow px-2">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest">
+              {/* Project Info - Uses flex-grow and min-h for alignment */}
+              <div className="flex flex-col flex-grow px-2 pb-2">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 px-2 py-0.5 rounded-md">
                     {project.category}
                   </span>
                   <span className="text-[10px] font-bold text-gray-400">{project.year}</span>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-1">
                   {project.name}
                 </h3>
 
-                <p className="text-sm text-gray-600 mb-6 line-clamp-3">
+                <p className="text-xs text-gray-500 mb-6 line-clamp-3 leading-relaxed min-h-[4.5em]">
                   {project.description}
                 </p>
 
-                <div className="mt-auto flex items-center justify-between">
-                  <div className="flex gap-3">
+                <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                  <div className="flex gap-2">
                     {project.repo && (
                       <Link
                         href={project.repo}
                         target="_blank"
-                        className="p-2 bg-gray-100 rounded-lg text-gray-600 hover:bg-gray-900 hover:text-white transition-all duration-300"
+                        className="p-2 bg-gray-50 rounded-xl text-gray-400 hover:bg-gray-900 hover:text-white transition-all duration-300 border border-transparent hover:border-gray-900"
                         title="View Source Code"
                       >
-                        <Icon icon="akar-icons:github-fill" width={18} />
+                        <Icon icon="akar-icons:github-fill" width={16} />
                       </Link>
                     )}
                     {project.url && project.url !== '#' && (
                       <Link
                         href={project.url}
                         target="_blank"
-                        className="p-2 bg-blue-50 rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                        className="p-2 bg-blue-50 rounded-xl text-blue-500 hover:bg-blue-600 hover:text-white transition-all duration-300 border border-transparent hover:border-blue-600"
                         title="Live Demo"
                       >
-                        <Icon icon="akar-icons:link-chain" width={18} />
+                        <Icon icon="akar-icons:link-chain" width={16} />
                       </Link>
                     )}
                   </div>
 
-                  <div className="flex -space-x-2">
-                    {project.projectSkills.slice(0, 3).map((skill, index) => (
+                  <div className="flex -space-x-1.5">
+                    {project.projectSkills.slice(0, 3).map((skill) => (
                       <div
                         key={skill.name}
-                        className="w-8 h-8 rounded-full bg-white border-2 border-gray-50 p-1.5 shadow-sm"
+                        className="w-7 h-7 rounded-full bg-white border border-gray-100 p-1.5 shadow-sm group-hover:border-blue-100 transition-colors"
                         title={skill.name}
                       >
                         <Icon icon={skill.icon} width="100%" />
                       </div>
                     ))}
                     {project.projectSkills.length > 3 && (
-                      <div className="w-8 h-8 rounded-full bg-gray-100 border-2 border-gray-50 flex items-center justify-center text-[10px] font-bold text-gray-500 shadow-sm">
+                      <div className="w-7 h-7 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center text-[9px] font-bold text-gray-400 shadow-sm">
                         +{project.projectSkills.length - 3}
                       </div>
                     )}
@@ -197,11 +195,11 @@ const Projects = () => {
 
       {/* See More Button */}
       {filteredProjects.length > 6 && (
-        <div className="mt-16 flex justify-center">
+        <div className="mt-20 flex justify-center">
           <Button
             onClick={() => setShowAll(!showAll)}
             variant="outline"
-            className="group px-8 py-3 rounded-xl flex items-center gap-3 font-bold"
+            className="group px-10 py-4 rounded-2xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
           >
             {showAll ? (
               <>
