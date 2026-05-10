@@ -46,17 +46,17 @@ const Navbar = () => {
           : 'bg-transparent'
       )}
     >
-      <div className="w-full flex items-center relative">
-        {/* Logo positioned at the far left */}
-        <Link href="/" className="group shrink-0 relative z-20">
+      <div className="w-full flex items-center relative min-h-[40px]">
+        {/* Logo at the far left */}
+        <Link href="/" className="group shrink-0 relative z-30">
           <span className="text-3xl font-signature text-blue-600 hover:text-blue-700 transition-colors whitespace-nowrap">
             Mehrab Hasan
           </span>
         </Link>
 
-        {/* Desktop Nav centered in the original max-w-7xl boundary */}
-        <div className="hidden lg:flex flex-grow items-center justify-center pointer-events-none">
-            <div className="max-w-7xl w-full flex items-center justify-end gap-6 pointer-events-auto">
+        {/* Desktop Nav - Centered to the screen boundary (original max-w-7xl behavior) */}
+        <div className="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none z-20">
+            <div className="max-w-7xl w-full flex items-center justify-end gap-6 pointer-events-auto px-6">
                 {navLinks.map((link) => (
                     <a
                     key={link.name}
@@ -73,8 +73,8 @@ const Navbar = () => {
             </div>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="flex-grow flex justify-end lg:hidden relative z-20">
+        {/* Mobile Toggle - Pushed to the right */}
+        <div className="flex-grow flex justify-end lg:hidden relative z-30">
             <button
                 className="w-10 h-10 flex items-center justify-center bg-gray-900 text-white rounded-xl shadow-lg focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
