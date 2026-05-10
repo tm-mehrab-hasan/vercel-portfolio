@@ -54,6 +54,7 @@ export type PublicationType = {
   conference?: string;
   url?: string;
   authors?: string;
+  status?: 'Published' | 'Under Review' | 'Accepted';
 };
 
 export type StringKeyValueType = {

@@ -1,7 +1,7 @@
 'use client';
 import { publicationsSection } from '@/lib/content/publications';
 import { motion } from 'framer-motion';
-import { getSectionAnimation, projectVariants } from '@/lib/utils/animations';
+import { getSectionAnimation } from '@/lib/utils/animations';
 import Icon from '@/components/Icon';
 import Link from 'next/link';
 
@@ -14,46 +14,84 @@ const Publications = () => {
       {...getSectionAnimation}
       className="py-24 px-6 max-w-7xl mx-auto"
     >
-      <div className="flex items-center gap-4 mb-12">
-        <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+      <div className="flex items-center gap-4 mb-16">
+        <h2 className="text-3xl font-bold text-gray-900 whitespace-nowrap">{title}</h2>
         <div className="h-[1px] bg-gray-300 flex-grow max-w-xs" />
       </div>
 
-      <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {publications.map((pub, i) => (
           <motion.div
-            key={pub.title}
-            custom={i}
-            initial="hidden"
-            whileInView="show"
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            variants={projectVariants}
-            className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+            transition={{ delay: i * 0.1 }}
+            className="group relative bg-white rounded-3xl border border-gray-100 p-8 transition-all duration-500 hover:shadow-2xl hover:border-blue-100 flex flex-col h-full"
           >
-            <div className="space-y-2 flex-grow">
-              <div className="flex flex-wrap items-center gap-3">
-                <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
-                  pub.type === 'Journal' ? 'bg-green-100 text-green-700' : 'bg-purple-100 text-purple-700'
+            {/* Status & Year Header */}
+            <div className="flex justify-between items-start mb-6">
+              <div className="flex flex-wrap gap-2">
+                <span className={`text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-sm ${
+                  pub.status === 'Published' 
+                    ? 'bg-green-50 text-green-600 border border-green-100' 
+                    : 'bg-yellow-50 text-yellow-600 border border-yellow-100'
                 }`}>
+                  {pub.status || 'Published'}
+                </span>
+                <span className="text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest bg-blue-50 text-blue-600 border border-blue-100">
                   {pub.type}
                 </span>
-                <span className="text-xs font-mono text-gray-400">{pub.year}</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 leading-snug">{pub.title}</h3>
-              <p className="text-gray-500 text-sm font-medium">{pub.conference}</p>
-              <p className="text-gray-400 text-xs italic">{pub.authors}</p>
+              <span className="text-sm font-bold text-gray-400">{pub.year}</span>
             </div>
 
-            {pub.url && pub.url !== '#' && (
-              <Link
-                href={pub.url}
-                target="_blank"
-                className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-bold text-sm transition-colors group/link self-start md:self-center"
-              >
-                Read Paper 
-                <Icon icon="akar-icons:link-out" width={18} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-              </Link>
-            )}
+            {/* Content */}
+            <div className="flex-grow">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors leading-snug">
+                {pub.title}
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-gray-50 rounded-lg shrink-0">
+                    <Icon icon="mdi:account-group-outline" width={18} className="text-gray-400" />
+                  </div>
+                  <p className="text-sm text-gray-600 font-medium">{pub.authors}</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-gray-50 rounded-lg shrink-0">
+                    <Icon icon="mdi:bank-outline" width={18} className="text-gray-400" />
+                  </div>
+                  <p className="text-sm text-gray-500 italic leading-relaxed">
+                    {pub.conference}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer Action */}
+            <div className="mt-8 pt-6 border-t border-gray-50 flex items-center justify-between">
+              {pub.url && pub.url !== '#' ? (
+                <Link
+                  href={pub.url}
+                  target="_blank"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors"
+                >
+                  View Publication
+                  <Icon icon="akar-icons:arrow-right" width={14} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+              ) : (
+                <span className="text-sm font-bold text-gray-300 italic">
+                  Link Coming Soon
+                </span>
+              )}
+              
+              <div className="p-2 bg-blue-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity">
+                <Icon icon="mdi:file-document-outline" width={20} className="text-blue-600" />
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>

@@ -10,6 +10,7 @@ export const publicationsSection: PublicationsSectionType = {
       conference: 'IAPress Journal (Statistics, Optimization & Information Computing)',
       url: '#',
       authors: 'T. M. Mehrab Hasan',
+      status: 'Under Review',
     },
     {
       title: 'Towards Cleaner Cities: A Smart IoT Solution for Managing Drainage Congestion in Bangladesh',
@@ -18,6 +19,7 @@ export const publicationsSection: PublicationsSectionType = {
       conference: '11th International Conference on Networking, Systems and Security (ICNSC / ICPS)',
       url: '#',
       authors: 'T. M. Mehrab Hasan',
+      status: 'Under Review',
     },
     {
       title: 'Cost-Effective High-Reliability IoT-Based Multi-Modal Patient Monitoring with Real-Time Clinical Alerts and Cloud Analytics',
@@ -26,14 +28,16 @@ export const publicationsSection: PublicationsSectionType = {
       conference: '2nd IEEE COMPAS',
       url: 'https://ieeexplore.ieee.org/document/11381662',
       authors: 'T. M. Mehrab Hasan',
+      status: 'Published',
     },
     {
-      title: 'Edge-to-Cloud Orchestrated Multi-Sensor IoT Framework for Real-Time WQI Classification and Predictive Assessment via Ensemble ML',
+      title: 'Edge-to-Cloud Orchestrated Multi-Sensor IoT Framework for Real-Time WQI Classification and Predictive Assessment via Ensemble ML',        
       type: 'Conference',
       year: 2026,
       conference: '2nd IEEE COMPAS',
       url: 'https://ieeexplore.ieee.org/document/11381747',
       authors: 'T. M. Mehrab Hasan',
+      status: 'Published',
     },
     {
       title: 'Design and Development of a Low-Cost Scalable GSM-IoT Smart Pet Feeder with a Remote Mobile Application',
@@ -42,6 +46,7 @@ export const publicationsSection: PublicationsSectionType = {
       conference: 'International Conference on Big Data, IoT and Machine Learning (BIM)',
       url: 'https://arxiv.org/abs/2601.08394',
       authors: 'T. M. Mehrab Hasan',
+      status: 'Published',
     },
     {
       title: 'Simultaneous Detection of LSD and FMD in Cattle Using Ensemble Deep Learning',
@@ -50,6 +55,7 @@ export const publicationsSection: PublicationsSectionType = {
       conference: 'International Conference on Big Data, IoT and Machine Learning (BIM)',
       url: 'https://arxiv.org/abs/2601.12889',
       authors: 'T. M. Mehrab Hasan',
+      status: 'Published',
     },
     {
       title: 'Resilient ESP32 Architecture for Unified Fleet Integrity and Emergency Safety in Resource-Constrained Environments',
@@ -58,6 +64,7 @@ export const publicationsSection: PublicationsSectionType = {
       conference: 'International Conference on Big Data, IoT and Machine Learning (BIM)',
       url: '#',
       authors: 'T. M. Mehrab Hasan',
+      status: 'Published',
     },
   ],
 };
