@@ -9,6 +9,8 @@ export const experienceSection: ExperienceSectionType = {
       role: 'Jr. Software Developer',
       started: 'August 2025',
       upto: 'Present',
+      logo: 'mdi:shield-check-outline',
+      tags: ['Python', 'Software Security', 'Next.js', 'Malware Research'],
       tasks: [
         'Developing BITSS VWAR Software (Portable & Windows versions) for malware detection and device security.',
         'Implementing device security features and neutralization systems to protect against malicious threats.',
@@ -22,6 +24,8 @@ export const experienceSection: ExperienceSectionType = {
       role: 'Django Backend Developer (Remote)',
       started: 'September 2025',
       upto: 'Present',
+      logo: 'mdi:server-network',
+      tags: ['Django', 'REST API', 'PostgreSQL', 'System Architecture'],
       tasks: [
         'Building scalable backend systems using Django and Python for diverse client applications.',
         'Implementing RESTful APIs and complex database schemas for high-performance applications.',
@@ -34,6 +38,8 @@ export const experienceSection: ExperienceSectionType = {
       role: 'Django (Python) Intern',
       started: 'July 2025',
       upto: 'September 2025',
+      logo: 'mdi:cart-outline',
+      tags: ['Django', 'AI Chatbot', 'E-commerce', 'Database Optimization'],
       tasks: [
         'Led the development of BAAZAR X - an AI-powered e-commerce platform.',
         'Implemented intelligent chatbot assistance and product management systems.',
@@ -46,6 +52,8 @@ export const experienceSection: ExperienceSectionType = {
       role: 'Robotics & Embedded System Engineer',
       started: 'May 2025',
       upto: 'July 2025',
+      logo: 'mdi:robot-industrial',
+      tags: ['ESP32', 'C++', 'IoT', 'Firebase', 'Sensors'],
       tasks: [
         'Designed and built robotic systems using ESP32, Firebase, and Python.',
         'Developed firmware for autonomous sensing and navigation.',
@@ -58,6 +66,8 @@ export const experienceSection: ExperienceSectionType = {
       role: 'Lead Web Developer',
       started: 'Jan 2022',
       upto: 'Feb 2023',
+      logo: 'mdi:leaf-outline',
+      tags: ['Management', 'Lead', 'Web Apps', 'Impact Monitoring'],
       tasks: [
         'Led the development of environmental impact monitoring platforms.',
         'Managed a team of developers to create responsive and accessible web applications.',

@@ -22,6 +22,8 @@ export type ExperienceType = {
   started: string;
   upto: string;
   tasks: string[];
+  logo?: string;
+  tags?: string[];
 };
 
 export type ProjectType = {
