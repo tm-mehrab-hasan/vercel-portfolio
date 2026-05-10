@@ -7,7 +7,7 @@ export const educationSection: EducationSectionType = {
       schoolName: 'University of Frontier Technology, Bangladesh',
       subTitle: 'B.Sc. Engineering (IoT & Robotics)',
       degree: 'B.Sc. Engineering (IoT & Robotics)',
-      duration: '2021 - 2025',
+      duration: '2020 - 2025',
       desc: 'Graduated with CGPA 3.71/4.00 in IoT & Robotics Engineering from the Department of IoT & Robotics Engineering. Specialized in intelligent systems, embedded programming, and automation technologies.',
       grade: '3.71 / 4.00',
       icon: 'mdi:university-outline',
