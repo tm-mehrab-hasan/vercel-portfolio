@@ -3,6 +3,7 @@ import { activitiesSection } from '@/lib/content/activities';
 import { motion } from 'framer-motion';
 import { getSectionAnimation } from '@/lib/utils/animations';
 import Icon from '@/components/Icon';
+import Image from 'next/image';
 
 const Activities = () => {
   const { title, activities } = activitiesSection;
@@ -30,13 +31,28 @@ const Activities = () => {
           >
             {/* Background Icon Glow */}
             <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-125 transition-all duration-700">
-                <Icon icon={act.icon || 'mdi:account-group-outline'} width={100} />
+                {act.icon && act.icon.startsWith('/') ? (
+                    <div className="relative w-32 h-32">
+                        <Image src={act.icon} alt="" fill className="object-contain grayscale opacity-20" />
+                    </div>
+                ) : (
+                    <Icon icon={act.icon || 'mdi:account-group-outline'} width={100} />
+                )}
             </div>
 
             <div className="relative z-10 flex flex-col h-full">
               <div className="flex justify-between items-start mb-8">
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white group-hover:rotate-6 transition-all duration-500 shadow-sm">
-                  <Icon icon={act.icon || 'mdi:account-group-outline'} width={28} />
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md border border-gray-50 overflow-hidden relative p-3 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  {act.icon && act.icon.startsWith('/') ? (
+                    <Image 
+                        src={act.icon} 
+                        alt={act.title}
+                        fill
+                        className="object-contain p-2"
+                    />
+                  ) : (
+                    <Icon icon={act.icon || 'mdi:account-group-outline'} width={28} className="text-blue-600" />
+                  )}
                 </div>
                 <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest pt-2">
                     {act.duration}
