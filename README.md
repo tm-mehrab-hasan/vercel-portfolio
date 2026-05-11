@@ -4,7 +4,7 @@ An AI-driven IoT & Robotics Engineer and Full-Stack Developer portfolio built wi
 
 [![T. M. Mehrab Hasan Portfolio](public/images/og-preview.png)](https://tm-mehrab-hasan.vercel.app/)
 
-The Portfolio Website is live at - https://tm-mehrab-hasan.vercel.app/
+🚀 **Live Demo:** [https://tm-mehrab-hasan.vercel.app/](https://tm-mehrab-hasan.vercel.app/)
 
 ## 🚀 Overview
 
@@ -12,7 +12,7 @@ Engineering intelligent, connected systems by integrating AI, IoT, and scalable 
 
 ## 🛠️ Tech Stack
 
-- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
 - **Library:** [React 19](https://react.dev/)
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/) & [Lenis](https://lenis.darkroom.engineering/) (Smooth Scroll)
@@ -28,11 +28,13 @@ Engineering intelligent, connected systems by integrating AI, IoT, and scalable 
 - **SEO Optimized:** Built-in SEO management with `seo.ts`.
 - **Comprehensive Sections:**
   - **Hero:** Impactful introduction with typewriter effect.
+  - **About:** Personal background and mission.
   - **Experience:** Interactive timeline of professional growth.
-  - **Projects:** Featured and regular project showcases with modals.
-  - **Skills:** Categorized skill grid.
-  - **Education & Publications:** Detailed academic and research history.
-  - **Contact:** Integrated contact form (EmailJS ready).
+  - **Projects:** Featured and regular project showcases with detailed modals.
+  - **Skills:** Categorized skill grid with visual proficiency levels.
+  - **Activities & Achievements:** Highlighted leadership roles and professional certifications.
+  - **Education & Publications:** Detailed academic history and research contributions.
+  - **Contact:** Integrated contact form with EmailJS integration and auto-reply.
 
 ## 🏃 Getting Started
 
@@ -78,11 +80,11 @@ The static files will be generated in the `out/` directory.
 src/
 ├── app/          # App router pages and layouts
 ├── components/   # Reusable UI components
-├── containers/   # Major page sections
+├── containers/   # Major page sections (Hero, About, Projects, etc.)
 ├── lib/
-│   ├── content/  # Centralized portfolio data (Edit here!)
+│   ├── content/  # Centralized portfolio data (Edit here to change content!)
 │   ├── types/    # TypeScript interfaces
-│   └── utils/    # Utility functions and animations
+│   └── utils/    # Utility functions and animation variants
 ```
 
 ## 📄 License
