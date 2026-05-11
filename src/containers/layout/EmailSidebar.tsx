@@ -4,16 +4,17 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const EmailSidebar = () => {
   const { scrollY } = useScroll();
 
-  // Email link appears first (delayed), then the line
-  const emailOpacity = useTransform(scrollY, [500, 700], [0, 1]);
-  const emailY = useTransform(scrollY, [500, 700], [20, 0]);
-  
-  const lineOpacity = useTransform(scrollY, [700, 900], [0, 1]);
-  const lineScaleY = useTransform(scrollY, [700, 900], [0, 1]);
+  // Email link appears first (with designations), then the line
+  const emailOpacity = useTransform(scrollY, [300, 500], [0, 1]);
+  const emailY = useTransform(scrollY, [300, 500], [20, 0]);
+
+  const lineOpacity = useTransform(scrollY, [500, 700], [0, 1]);
+  const lineScaleY = useTransform(scrollY, [500, 700], [0, 1]);
+
 
   return (
     <div className="hidden lg:flex fixed right-12 bottom-0 flex-col items-center gap-6 z-40">
-      <motion.div 
+      <motion.div
         style={{ opacity: emailOpacity, y: emailY }}
         className="mb-4"
       >
@@ -24,9 +25,9 @@ const EmailSidebar = () => {
           mehrabratul210524@gmail.com
         </a>
       </motion.div>
-      <motion.div 
+      <motion.div
         style={{ opacity: lineOpacity, scaleY: lineScaleY, originY: 1 }}
-        className="w-[1px] h-32 bg-gray-400" 
+        className="w-[1px] h-32 bg-gray-400"
       />
     </div>
   );
