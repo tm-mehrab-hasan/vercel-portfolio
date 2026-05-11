@@ -12,7 +12,7 @@ const SocialSidebar = () => {
       initial="hidden"
       animate="show"
       variants={fadeIn(1)}
-      className="hidden lg:flex fixed left-12 bottom-0 flex-col items-center gap-6"
+      className="hidden lg:flex fixed left-12 bottom-0 flex-col items-center gap-6 z-40"
     >
       <div className="flex flex-col gap-6 mb-4">
         {socialLinks.map((social) => (

@@ -8,7 +8,7 @@ const EmailSidebar = () => {
       initial="hidden"
       animate="show"
       variants={fadeIn(1.2)}
-      className="hidden lg:flex fixed right-12 bottom-0 flex-col items-center gap-6"
+      className="hidden lg:flex fixed right-12 bottom-0 flex-col items-center gap-6 z-40"
     >
       <div className="mb-4">
         <a

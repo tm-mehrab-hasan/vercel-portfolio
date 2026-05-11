@@ -72,10 +72,6 @@ const About = () => {
                     <span className="text-[10px] md:text-[11px] font-black uppercase tracking-widest leading-none truncate drop-shadow">T. M. Mehrab Hasan</span>
                     <span className="text-[8px] md:text-[9px] font-bold text-blue-100 mt-1 uppercase truncate drop-shadow">IoT & Software Engineer</span>
                   </div>
-                  <div className="flex items-center gap-2 px-2 py-1 bg-green-500/30 rounded-full border border-green-400/40 shrink-0 shadow">
-                    <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-[7px] md:text-[8px] font-black tracking-tighter">LIVE_LINK_ACTIVE</span>
-                  </div>
                 </div>
               </div>
             </div>
