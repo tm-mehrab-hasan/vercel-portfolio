@@ -95,18 +95,16 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="h-[50px] md:h-[60px] flex items-center bg-blue-600 px-6 rounded-2xl w-fit shadow-2xl shadow-blue-200 border-b-4 border-blue-800 mx-auto lg:mx-0">
-            <div className="flex items-center gap-3 text-white font-mono text-base md:text-lg">
-                <span className="text-blue-100 font-bold">$</span>
+          <div className="flex items-center gap-3 text-blue-600 font-sans text-xl md:text-2xl font-black mx-auto lg:mx-0">
+                <span className="text-blue-400">$</span>
                 <Typewriter 
                   words={tagline} 
-                  className="text-white font-bold" 
+                  className="text-blue-600 font-black" 
                   typingSpeed={40} 
                   deletingSpeed={20} 
                   pauseTime={1000}
                 />
-                <span className="w-2 h-5 bg-white animate-pulse shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-            </div>
+                <span className="w-2.5 h-6 bg-blue-600 animate-pulse shadow-[0_0_10px_rgba(37,99,235,0.5)]" />
           </div>
 
           <p className="text-gray-500 text-lg md:text-xl max-w-2xl leading-relaxed text-center lg:text-justify font-medium mx-auto lg:mx-0">
@@ -147,16 +145,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Down Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
-      >
-        <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] rotate-90 mb-8 origin-left">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-blue-600 to-transparent" />
-      </motion.div>
     </section>
   );
 };
