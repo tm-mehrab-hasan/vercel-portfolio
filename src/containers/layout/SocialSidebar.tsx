@@ -12,9 +12,9 @@ const SocialIcon = ({
   index: number, 
   scrollY: MotionValue<number> 
 }) => {
-  // Stagger the reveal based on index
-  const start = 100 + index * 50;
-  const end = 250 + index * 50;
+  // Start reveal later (after crossing designations)
+  const start = 400 + index * 60;
+  const end = 550 + index * 60;
 
   const opacity = useTransform(scrollY, [start, end], [0, 1]);
   const y = useTransform(scrollY, [start, end], [20, 0]);
@@ -36,8 +36,8 @@ const SocialSidebar = () => {
   const { scrollY } = useScroll();
 
   // The vertical line appears after the icons
-  const lineOpacity = useTransform(scrollY, [350, 500], [0, 1]);
-  const lineScaleY = useTransform(scrollY, [350, 500], [0, 1]);
+  const lineOpacity = useTransform(scrollY, [700, 850], [0, 1]);
+  const lineScaleY = useTransform(scrollY, [700, 850], [0, 1]);
 
   return (
     <div className="hidden lg:flex fixed left-12 bottom-0 flex-col items-center gap-6 z-40">

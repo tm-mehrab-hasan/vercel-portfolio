@@ -4,12 +4,12 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const EmailSidebar = () => {
   const { scrollY } = useScroll();
 
-  // Email link appears first, then the line
-  const emailOpacity = useTransform(scrollY, [200, 400], [0, 1]);
-  const emailY = useTransform(scrollY, [200, 400], [20, 0]);
+  // Email link appears first (delayed), then the line
+  const emailOpacity = useTransform(scrollY, [500, 700], [0, 1]);
+  const emailY = useTransform(scrollY, [500, 700], [20, 0]);
   
-  const lineOpacity = useTransform(scrollY, [350, 550], [0, 1]);
-  const lineScaleY = useTransform(scrollY, [350, 550], [0, 1]);
+  const lineOpacity = useTransform(scrollY, [700, 900], [0, 1]);
+  const lineScaleY = useTransform(scrollY, [700, 900], [0, 1]);
 
   return (
     <div className="hidden lg:flex fixed right-12 bottom-0 flex-col items-center gap-6 z-40">
