@@ -63,6 +63,24 @@ const Button = ({
   );
 
   if (href) {
+    const isExternal = href.startsWith('http') || href.startsWith('mailto:');
+    const isFile = href.endsWith('.pdf') || href.endsWith('.zip');
+
+    if (isExternal || isFile) {
+      return (
+        <a
+          href={href}
+          target={sameTab ? '_self' : '_blank'}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+          className={classes}
+          onClick={(e) => onClick && onClick(e as any)}
+        >
+          <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+          {content}
+        </a>
+      );
+    }
+
     return (
       <Link
         href={href}
