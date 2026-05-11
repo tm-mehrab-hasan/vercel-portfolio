@@ -37,6 +37,17 @@ const Navbar = () => {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (window.location.pathname === '/') {
+      e.preventDefault();
+      if (lenis) {
+        lenis.scrollTo(0, { duration: 1.5, easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <nav
       suppressHydrationWarning
@@ -49,7 +60,7 @@ const Navbar = () => {
     >
       <div className="w-full flex items-center relative min-h-[40px] px-4 md:px-12" suppressHydrationWarning>
         {/* Logo moved slightly to the right with container padding */}
-        <Link href="/" className="group shrink-0 relative z-30">
+        <Link href="/" className="group shrink-0 relative z-30" onClick={handleLogoClick}>
           <span className="text-3xl font-signature text-blue-600 hover:text-blue-700 transition-colors whitespace-nowrap">
             Mehrab Hasan
           </span>
