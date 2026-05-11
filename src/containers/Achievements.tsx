@@ -156,7 +156,7 @@ const Achievements = () => {
               }
             }}
             variant="outline"
-            className="group px-10 py-4 rounded-xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
+            className="px-10"
           >
             {showAll ? (
               <>
