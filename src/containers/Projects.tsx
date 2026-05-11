@@ -116,25 +116,35 @@ const Projects = () => {
                     </BrowserFrame>
                   </Link>
                 ) : (
-                  <div className="relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-50 group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center p-8">
+                  <Link
+                    href={project.repo || '#'}
+                    target="_blank"
+                    className={cn(
+                      "block relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-50 group-hover:-translate-y-2 transition-all duration-500 p-8",
+                      !project.repo && "cursor-default"
+                    )}
+                    onClick={(e) => !project.repo && e.preventDefault()}
+                  >
                     <div
                       className="absolute inset-0 opacity-5"
                       style={{ backgroundColor: project.color }}
                     />
-                    <div
-                      className="w-16 h-16 rounded-xl flex items-center justify-center shadow relative z-10 group-hover:rotate-12 transition-transform duration-500"
-                      style={{ backgroundColor: project.color + '20', color: project.color }}
-                    >
-                      <Icon icon={project.mainIcon || 'akar-icons:plus'} width={32} />
+                    <div className="h-full w-full flex items-center justify-center">
+                        <div
+                        className="w-16 h-16 rounded-xl flex items-center justify-center shadow relative z-10 group-hover:rotate-12 transition-transform duration-500"
+                        style={{ backgroundColor: project.color + '20', color: project.color }}
+                        >
+                        <Icon icon={project.mainIcon || 'akar-icons:plus'} width={32} />
+                        </div>
                     </div>
 
                     <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full blur-3xl opacity-20" style={{ backgroundColor: project.color }} />
                     <div className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full blur-3xl opacity-20" style={{ backgroundColor: project.color }} />
                     
                     <div className="absolute bottom-4 left-4 right-4 text-center">
-                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Case Study</span>
+                        <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">View Repository</span>
                     </div>
-                  </div>
+                  </Link>
                 )}
               </div>
 
@@ -148,7 +158,13 @@ const Projects = () => {
                 </div>
 
                 <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-1">
-                  {project.name}
+                  {project.repo ? (
+                    <Link href={project.repo} target="_blank" className="hover:underline decoration-blue-600/30 underline-offset-4">
+                      {project.name}
+                    </Link>
+                  ) : (
+                    project.name
+                  )}
                 </h3>
 
                 <p className="text-xs text-gray-500 mb-6 line-clamp-3 leading-relaxed min-h-[4.5em]">
