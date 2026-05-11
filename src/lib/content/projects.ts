@@ -46,7 +46,7 @@ export const projectsSection: ProjectsSectionType = {
       url: '#',
       repo: 'https://github.com/TM-Mehrab-Hasan/Early-Stage-Fire-Detection-Robot',
       year: 2023,
-      img: '/images/projects/fire-robot.png',
+      img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
       mainIcon: 'akar-icons:fire',
       color: '#ef4444', // Red
       projectSkills: [
@@ -82,7 +82,7 @@ export const projectsSection: ProjectsSectionType = {
       url: '#',
       repo: 'https://github.com/TM-Mehrab-Hasan/Fake-News-Detection',
       year: 2024,
-      img: '/images/projects/fake-news.png',
+      img: 'https://images.unsplash.com/photo-1591115765373-520b7a21f7d5?auto=format&fit=crop&w=800&q=80',
       mainIcon: 'akar-icons:newspaper',
       color: '#10b981', // Green
       projectSkills: [
