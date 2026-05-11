@@ -20,8 +20,8 @@ const Contact = () => {
     const toastId = toast.loading('Sending message...');
 
     const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-    const ADMIN_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!; 
-    const AUTO_REPLY_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID!; 
+    const ADMIN_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const AUTO_REPLY_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID!;
 
     try {
       emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
@@ -66,10 +66,17 @@ const Contact = () => {
       color: 'bg-cyan-600',
     },
     {
+      icon: 'lucide:phone',
+      title: 'Phone',
+      value: '+8801568901285',
+      link: 'tel:+8801568901285',
+      color: 'bg-green-600',
+    },
+    {
       icon: 'lucide:map-pin',
       title: 'Location',
-      value: 'Mirpur, Dhaka, Bangladesh',
-      link: 'https://www.google.com/maps/place/Mirpur,+Dhaka',
+      value: 'Eastern Housing, Pallabi Phase-2, Mirpur, Dhaka-1216, Bangladesh',
+      link: 'https://www.google.com/maps/search/Eastern+Housing+Pallabi+Phase-2+Mirpur+Dhaka',
       color: 'bg-rose-500',
     },
   ];
@@ -88,7 +95,7 @@ const Contact = () => {
 
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-blue-600 font-black tracking-[0.3em] uppercase text-xs mb-4 block"
@@ -115,28 +122,35 @@ const Contact = () => {
                     href={info.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-5 group p-3 rounded-xl hover:bg-blue-50/50 hover:shadow transition-all duration-300"
+                    className="flex items-center justify-between group p-3 rounded-xl hover:bg-blue-50/50 hover:shadow transition-all duration-300"
                   >
-                    <div className={`${info.color} w-12 h-12 rounded-xl flex items-center justify-center text-white shadow group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shrink-0`}>
-                      <Icon icon={info.icon} width={24} />
+                    <div className="flex items-center gap-5 min-w-0">
+                      <div className={`${info.color} w-12 h-12 rounded-xl flex items-center justify-center text-white shadow group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shrink-0`}>
+                        <Icon icon={info.icon} width={24} />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{info.title}</p>
+                        <p className="text-gray-900 font-bold group-hover:text-blue-600 transition-colors truncate text-sm md:text-base">{info.value}</p>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">{info.title}</p>
-                      <p className="text-gray-900 font-bold group-hover:text-blue-600 transition-colors truncate text-sm md:text-base">{info.value}</p>
-                    </div>
+                    <Icon
+                      icon="akar-icons:arrow-right"
+                      width={16}
+                      className="text-blue-600 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 shrink-0"
+                    />
                   </a>
                 ))}
               </div>
             </div>
 
             <div className="p-8 bg-blue-600 rounded-xl text-white relative overflow-hidden shadow shadow-blue-200 shrink-0">
-                <div className="absolute top-0 right-0 p-6 opacity-10">
-                    <Icon icon="mdi:robot-happy-outline" width={100} />
-                </div>
-                <h4 className="text-xl font-black mb-3 relative z-10">Open for Opportunities</h4>
-                <p className="text-blue-100 text-xs leading-relaxed relative z-10">
-                    I am currently looking for new roles in IoT, Robotics, and Full-Stack Development. Let's build something amazing together!
-                </p>
+              <div className="absolute top-0 right-0 p-6 opacity-10">
+                <Icon icon="mdi:robot-happy-outline" width={100} />
+              </div>
+              <h4 className="text-xl font-black mb-3 relative z-10">Open for Opportunities</h4>
+              <p className="text-blue-100 text-xs leading-relaxed relative z-10">
+                I am currently looking for new roles in IoT, Robotics, and Full-Stack Development. Let's build something amazing together!
+              </p>
             </div>
           </div>
 
