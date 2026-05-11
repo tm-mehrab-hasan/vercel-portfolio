@@ -1,17 +1,34 @@
 'use client';
 import { socialSection } from '@/lib/content/social';
 import Icon from '@/components/Icon';
-import { motion } from 'framer-motion';
-import { fadeIn } from '@/lib/utils/animations';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const SocialSidebar = () => {
   const { socialLinks } = socialSection;
+  const { scrollY } = useScroll();
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Show sidebar only after scrolling down a bit (past Hero section)
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      if (latest > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    });
+  }, [scrollY]);
 
   return (
     <motion.div
-      initial="hidden"
-      animate="show"
-      variants={fadeIn(1)}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ 
+        opacity: isVisible ? 1 : 0,
+        x: isVisible ? 0 : -20,
+        pointerEvents: isVisible ? 'auto' : 'none'
+      }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
       className="hidden lg:flex fixed left-12 bottom-0 flex-col items-center gap-6 z-40"
     >
       <div className="flex flex-col gap-6 mb-4">

@@ -1,13 +1,31 @@
 'use client';
-import { motion } from 'framer-motion';
-import { fadeIn } from '@/lib/utils/animations';
+import { motion, useScroll } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const EmailSidebar = () => {
+  const { scrollY } = useScroll();
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Show sidebar only after scrolling down a bit (past Hero section)
+  useEffect(() => {
+    return scrollY.onChange((latest) => {
+      if (latest > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    });
+  }, [scrollY]);
+
   return (
     <motion.div
-      initial="hidden"
-      animate="show"
-      variants={fadeIn(1.2)}
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ 
+        opacity: isVisible ? 1 : 0,
+        x: isVisible ? 0 : 20,
+        pointerEvents: isVisible ? 'auto' : 'none'
+      }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
       className="hidden lg:flex fixed right-12 bottom-0 flex-col items-center gap-6 z-40"
     >
       <div className="mb-4">
