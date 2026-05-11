@@ -96,9 +96,11 @@ export type ActivityType = {
   title: string;
   role: string;
   duration: string;
+  icon: string;
   desc: string;
-  icon?: string;
+  points?: string[];
 };
+
 
 export type SkillType = { name: string; icon: string };
 

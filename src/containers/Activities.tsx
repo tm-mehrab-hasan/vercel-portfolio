@@ -4,9 +4,13 @@ import { motion } from 'framer-motion';
 import { getSectionAnimation } from '@/lib/utils/animations';
 import Icon from '@/components/Icon';
 import Image from 'next/image';
+import { useState } from 'react';
+import ActivityModal from '@/components/ActivityModal';
+import { ActivityType } from '@/lib/types';
 
 const Activities = () => {
   const { title, activities } = activitiesSection;
+  const [selectedActivity, setSelectedActivity] = useState<ActivityType | null>(null);
 
   return (
     <motion.section
@@ -27,7 +31,8 @@ const Activities = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="group relative bg-white hover:bg-blue-50/50 p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow transition-all duration-500 hover:border-blue-100 overflow-hidden flex flex-col h-full"
+            onClick={() => setSelectedActivity(act)}
+            className="group relative bg-white hover:bg-blue-50/50 p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:border-blue-100 overflow-hidden flex flex-col h-full cursor-pointer"
           >
             {/* Background Icon Glow */}
             <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-125 transition-all duration-700">
@@ -81,6 +86,12 @@ const Activities = () => {
           </motion.div>
         ))}
       </div>
+
+      <ActivityModal
+        isOpen={!!selectedActivity}
+        onClose={() => setSelectedActivity(null)}
+        activity={selectedActivity}
+      />
     </motion.section>
   );
 };
