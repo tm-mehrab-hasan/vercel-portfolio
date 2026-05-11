@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   description: seoData.description,
   keywords: seoData.keywords.join(','),
   metadataBase: new URL(seoData.url),
+  icons: {
+    icon: '/images/logo.png',
+  },
   alternates: {
     canonical: seoData.url,
   },

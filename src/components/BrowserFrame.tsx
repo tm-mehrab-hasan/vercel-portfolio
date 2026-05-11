@@ -10,7 +10,7 @@ type Props = {
 
 const BrowserFrame = ({ url, className, children }: Props) => {
   return (
-    <div className={cn('w-full rounded-t-xl overflow-hidden border border-gray-200 shadow-lg bg-white', className)}>
+    <div className={cn('w-full rounded-t-xl overflow-hidden border border-gray-200 shadow bg-white', className)}>
       {/* Browser Header */}
       <div className="bg-gray-100 px-4 py-2 flex items-center gap-2 border-b border-gray-200">
         <div className="flex gap-1.5">

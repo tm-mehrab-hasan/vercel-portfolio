@@ -43,7 +43,7 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4',
         scrolled || isOpen 
-          ? 'bg-blue-50/90 backdrop-blur-xl shadow-lg shadow-blue-900/5 border-b border-blue-100' 
+          ? 'bg-white/90 backdrop-blur-xl shadow shadow-blue-900/5 border-b border-blue-100' 
           : 'bg-transparent'
       )}
     >
@@ -77,7 +77,7 @@ const Navbar = () => {
         {/* Mobile Toggle - Pushed to the right */}
         <div className="flex-grow flex justify-end lg:hidden relative z-30">
             <button
-                className="w-10 h-10 flex items-center justify-center bg-gray-900 text-white rounded-xl shadow-lg focus:outline-none"
+                className="w-10 h-10 flex items-center justify-center bg-gray-900 text-white rounded-xl shadow focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Toggle menu"
             >
@@ -93,7 +93,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden absolute top-full left-0 w-full bg-blue-50/95 backdrop-blur-2xl border-t border-blue-100 shadow-2xl py-8 px-6 flex flex-col gap-6"
+            className="lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-2xl border-t border-blue-100 shadow py-8 px-6 flex flex-col gap-6"
           >
             {navLinks.map((link) => (
               <a
@@ -105,7 +105,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button href={cta.url} variant="primary" className="w-full py-4 text-sm font-black uppercase tracking-widest rounded-2xl shadow-xl" sameTab={cta.sameTab} onClick={() => setIsOpen(false)}>
+            <Button href={cta.url} variant="primary" className="w-full py-4 text-sm font-black uppercase tracking-widest rounded-xl shadow" sameTab={cta.sameTab} onClick={() => setIsOpen(false)}>
               {cta.title}
             </Button>
           </motion.div>

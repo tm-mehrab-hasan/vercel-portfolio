@@ -38,7 +38,7 @@ const Publications = () => {
               exit={{ opacity: 0, scale: 0.95 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="group relative bg-white rounded-3xl border border-gray-100 p-8 transition-all duration-500 hover:shadow-2xl hover:border-blue-100 flex flex-col h-full"
+              className="group relative bg-white hover:bg-blue-50/50 rounded-xl border border-gray-100 p-8 transition-all duration-500 hover:shadow hover:border-blue-100 flex flex-col h-full"
             >
               {/* Status & Year Header */}
               <div className="flex justify-between items-start mb-6">
@@ -131,7 +131,7 @@ const Publications = () => {
               }
             }}
             variant="outline"
-            className="group px-10 py-4 rounded-2xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
+            className="group px-10 py-4 rounded-xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
           >
             {showAll ? (
               <>

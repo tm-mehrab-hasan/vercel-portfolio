@@ -26,7 +26,7 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className={`group relative p-10 bg-white rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col justify-between ${
+            className={`group relative p-10 bg-white hover:bg-blue-50/50 rounded-xl border border-gray-100 shadow-sm hover:shadow transition-all duration-500 overflow-hidden flex flex-col justify-between ${
               i === 0 || i === 3 ? 'md:col-span-7' : 'md:col-span-5'
             }`}
           >
@@ -47,7 +47,7 @@ const Testimonials = () => {
             </div>
 
             <div className="relative z-10 pt-6 border-t border-gray-50 flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-900 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+              <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center text-white shadow group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
                 <Icon icon="mdi:account-circle-outline" width={28} />
               </div>
               <div>

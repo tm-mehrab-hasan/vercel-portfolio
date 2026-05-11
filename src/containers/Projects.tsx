@@ -57,7 +57,7 @@ const Projects = () => {
               className={cn(
                 'px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 capitalize',
                 filter === cat
-                  ? 'bg-blue-600 text-white shadow-md shadow-blue-200'
+                  ? 'bg-blue-600 text-white shadow shadow-blue-200'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               )}
             >
@@ -80,7 +80,7 @@ const Projects = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
-              className="group flex flex-col h-full bg-white rounded-3xl border border-gray-100 p-4 transition-all duration-500 hover:shadow-2xl hover:border-blue-100"
+              className="group flex flex-col h-full bg-white hover:bg-blue-50/50 rounded-xl border border-gray-100 p-4 transition-all duration-500 hover:shadow hover:border-blue-100"
             >
               {/* Project Visual Container - Strictly fixed height */}
               <div className="mb-6 h-[220px] w-full relative">
@@ -93,7 +93,7 @@ const Projects = () => {
                       if (!project.url || project.url === '#') e.preventDefault();
                     }}
                   >
-                    <BrowserFrame url={project.url} className="h-full group-hover:-translate-y-2 transition-transform duration-500 shadow-lg group-hover/link:shadow-blue-200/50">
+                    <BrowserFrame url={project.url} className="h-full group-hover:-translate-y-2 transition-transform duration-500 shadow group-hover/link:shadow-blue-200/50">
                       <div className="relative w-full h-full bg-gray-50 flex items-center justify-center overflow-hidden">
                         {project.img ? (
                           <Image
@@ -116,13 +116,13 @@ const Projects = () => {
                     </BrowserFrame>
                   </Link>
                 ) : (
-                  <div className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-50 border border-gray-50 group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center p-8">
+                  <div className="relative h-full w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-50 group-hover:-translate-y-2 transition-all duration-500 flex items-center justify-center p-8">
                     <div
                       className="absolute inset-0 opacity-5"
                       style={{ backgroundColor: project.color }}
                     />
                     <div
-                      className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md relative z-10 group-hover:rotate-12 transition-transform duration-500"
+                      className="w-16 h-16 rounded-xl flex items-center justify-center shadow relative z-10 group-hover:rotate-12 transition-transform duration-500"
                       style={{ backgroundColor: project.color + '20', color: project.color }}
                     >
                       <Icon icon={project.mainIcon || 'akar-icons:plus'} width={32} />
@@ -183,7 +183,7 @@ const Projects = () => {
                     {project.projectSkills.slice(0, 3).map((skill) => (
                       <div
                         key={skill.name}
-                        className="w-7 h-7 rounded-full bg-white border border-gray-100 p-1.5 shadow-sm group-hover:border-blue-100 transition-colors"
+                        className="w-7 h-7 rounded-full bg-white hover:bg-blue-50/50 border border-gray-100 p-1.5 shadow-sm group-hover:border-blue-100 transition-colors"
                         title={skill.name}
                       >
                         <Icon icon={skill.icon} width="100%" />
@@ -225,8 +225,7 @@ const Projects = () => {
                 setShowAll(true);
               }
             }}
-            variant="outline"
-            className="group px-10 py-4 rounded-2xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
+            variant="outline" className="px-10"
           >
             {showAll ? (
               <>

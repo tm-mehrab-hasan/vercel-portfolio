@@ -42,9 +42,9 @@ const Button = ({
   };
 
   const classes = cn(
-    'px-8 py-4 rounded-2xl transition-all duration-300 font-black uppercase tracking-widest text-sm inline-block text-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow-xl relative overflow-hidden group',
-    variant === 'primary' && 'bg-blue-600 text-white hover:bg-blue-700 shadow-blue-200',
-    variant === 'outline' && 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 shadow-none',
+    'px-8 py-4 rounded-xl transition-all duration-300 font-black uppercase tracking-widest text-sm inline-block text-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed shadow relative overflow-hidden group',
+    variant === 'primary' && 'bg-blue-600 text-white hover:bg-blue-700',
+    variant === 'outline' && 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white shadow-none',
     variant === 'ghost' && 'text-gray-600 hover:bg-gray-100 shadow-none',
     className
   );

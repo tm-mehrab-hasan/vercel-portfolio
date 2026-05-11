@@ -23,7 +23,7 @@ export default function NotFound() {
           The drone has been dispatched to investigate this anomaly.
         </p>
 
-        <Button href="/" variant="primary" sameTab className="px-8 py-4 rounded-2xl font-black uppercase tracking-widest shadow-xl hover:scale-105 transition-transform">
+        <Button href="/" variant="primary" sameTab className="px-8 py-4 rounded-xl font-black uppercase tracking-widest shadow hover:scale-105 transition-transform">
           Return to Command Center
         </Button>
       </motion.div>

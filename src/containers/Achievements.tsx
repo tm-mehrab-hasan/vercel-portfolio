@@ -54,13 +54,13 @@ const Achievements = () => {
               exit={{ opacity: 0, scale: 0.9 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="group relative p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-2xl hover:border-blue-100 transition-all duration-500 flex flex-col h-full"
+              className="group relative p-8 bg-white hover:bg-blue-50/50 rounded-xl border border-gray-100 shadow-sm hover:shadow hover:border-blue-100 transition-all duration-500 flex flex-col h-full"
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/10 to-indigo-600/10 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
               
               <div className="relative z-10 flex flex-col h-full">
                 {/* Visual Header (Thumbnail or Icon) */}
-                <div className="mb-6 relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:shadow-lg transition-all duration-500">
+                <div className="mb-6 relative w-full aspect-video rounded-xl overflow-hidden bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:shadow transition-all duration-500">
                   {ach.certificate ? (
                     ach.certificate.toLowerCase().endsWith('.pdf') ? (
                       <div className="flex flex-col items-center gap-2">
@@ -76,7 +76,7 @@ const Achievements = () => {
                       />
                     )
                   ) : (
-                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:rotate-12 transition-transform duration-500">
+                    <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:rotate-12 transition-transform duration-500">
                       <Icon icon="akar-icons:ribbon" width={32} />
                     </div>
                   )}
@@ -86,7 +86,7 @@ const Achievements = () => {
                     <div className="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/40 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <button 
                             onClick={() => handleViewCertificate(ach.certificate!, ach.title)}
-                            className="bg-white text-blue-600 px-4 py-2 rounded-xl text-xs font-black flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl"
+                            className="bg-white hover:bg-blue-50/50 text-blue-600 px-4 py-2 rounded-xl text-xs font-black flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow"
                         >
                             <Icon icon="akar-icons:eye" width={14} />
                             View Certificate
@@ -156,7 +156,7 @@ const Achievements = () => {
               }
             }}
             variant="outline"
-            className="group px-10 py-4 rounded-2xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
+            className="group px-10 py-4 rounded-xl flex items-center gap-3 font-bold border-2 border-gray-100 hover:border-blue-600 hover:text-blue-600 transition-all duration-500"
           >
             {showAll ? (
               <>

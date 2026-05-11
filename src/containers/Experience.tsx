@@ -27,7 +27,7 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div key={index} className="relative group">
               {/* Timeline Dot */}
-              <div className="absolute left-4 md:left-1/2 top-0 w-8 h-8 bg-white border-4 border-blue-600 rounded-full -translate-x-1/2 z-10 shadow-lg group-hover:scale-125 transition-transform duration-500 hidden md:block" />
+              <div className="absolute left-4 md:left-1/2 top-0 w-8 h-8 bg-white hover:bg-blue-50/50 border-4 border-blue-600 rounded-full -translate-x-1/2 z-10 shadow group-hover:scale-125 transition-transform duration-500 hidden md:block" />
 
               <div className={`flex flex-col md:flex-row items-center gap-12 ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
@@ -58,7 +58,7 @@ const Experience = () => {
                     initial={{ opacity: 0, x: index % 2 === 0 ? 20 : -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 group-hover:border-blue-100 relative overflow-hidden"
+                    className="bg-white hover:bg-blue-50/50 p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow transition-all duration-500 group-hover:border-blue-100 relative overflow-hidden"
                   >
                     {/* Role Icon Overlay */}
                     <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">

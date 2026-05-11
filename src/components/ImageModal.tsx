@@ -38,16 +38,16 @@ const ImageModal = ({ isOpen, onClose, imageSrc, title }: Props) => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl z-10"
+            className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-xl overflow-hidden shadow z-10"
           >
             {/* Header */}
             <div className="absolute top-0 inset-x-0 p-4 flex justify-between items-center bg-gradient-to-b from-black/50 to-transparent z-20">
-              <h3 className="text-white font-bold text-lg drop-shadow-md truncate pr-8">
+              <h3 className="text-white font-bold text-lg drop-shadow truncate pr-8">
                 {title}
               </h3>
               <button
                 onClick={onClose}
-                className="p-2 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all"
+                className="p-2 bg-blue-50/10 hover:bg-blue-50/20 backdrop-blur-md rounded-full text-white transition-all"
               >
                 <Icon icon="akar-icons:cross" width={20} />
               </button>

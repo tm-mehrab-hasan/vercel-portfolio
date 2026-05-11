@@ -53,9 +53,9 @@ const About = () => {
         <div className="lg:col-span-5 relative group">
           <div className="relative z-10 w-full aspect-square max-w-md mx-auto">
             {/* Main Image Frame */}
-            <div className="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-6 group-hover:rotate-3 transition-transform duration-500 opacity-10" />
+            <div className="absolute inset-0 bg-blue-600 rounded-xl rotate-6 group-hover:rotate-3 transition-transform duration-500 opacity-10" />
             
-            <div className="relative h-full w-full rounded-[2.5rem] overflow-hidden border-2 border-white shadow-2xl z-10 bg-white">
+            <div className="relative h-full w-full rounded-xl overflow-hidden border-2 border-white shadow z-10 bg-white hover:bg-blue-50/50">
               <Image
                 src={img}
                 alt="Mehrab Hasan"
@@ -66,13 +66,13 @@ const About = () => {
               {/* HUD Elements */}
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-transparent to-transparent md:opacity-0 md:group-hover:opacity-100 opacity-100 transition-opacity duration-500 pointer-events-none" />
               
-              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 p-3 md:p-4 bg-white/20 backdrop-blur-md rounded-2xl border border-white/30 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 translate-y-0 opacity-100 transition-all duration-500 shadow-2xl overflow-hidden">
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 p-3 md:p-4 bg-blue-50/20 backdrop-blur-md rounded-xl border border-white/30 md:translate-y-4 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 translate-y-0 opacity-100 transition-all duration-500 shadow overflow-hidden">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-white">
                   <div className="flex flex-col min-w-0">
-                    <span className="text-[10px] md:text-[11px] font-black uppercase tracking-widest leading-none truncate drop-shadow-md">T. M. Mehrab Hasan</span>
-                    <span className="text-[8px] md:text-[9px] font-bold text-blue-100 mt-1 uppercase truncate drop-shadow-md">IoT & Software Engineer</span>
+                    <span className="text-[10px] md:text-[11px] font-black uppercase tracking-widest leading-none truncate drop-shadow">T. M. Mehrab Hasan</span>
+                    <span className="text-[8px] md:text-[9px] font-bold text-blue-100 mt-1 uppercase truncate drop-shadow">IoT & Software Engineer</span>
                   </div>
-                  <div className="flex items-center gap-2 px-2 py-1 bg-green-500/30 rounded-full border border-green-400/40 shrink-0 shadow-lg">
+                  <div className="flex items-center gap-2 px-2 py-1 bg-green-500/30 rounded-full border border-green-400/40 shrink-0 shadow">
                     <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-green-400 animate-pulse" />
                     <span className="text-[7px] md:text-[8px] font-black tracking-tighter">LIVE_LINK_ACTIVE</span>
                   </div>
@@ -97,7 +97,7 @@ const About = () => {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 + (i * 0.1) }}
-                className="bg-white px-4 py-2 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 hover:scale-110 transition-transform cursor-default group/metric"
+                className="bg-white hover:bg-blue-50/50 px-4 py-2 rounded-xl shadow border border-gray-100 flex items-center gap-3 hover:scale-110 transition-transform cursor-default group/metric"
               >
                 <Icon icon={metric.icon} width={18} className="text-blue-600" />
                 <span className="text-[10px] font-black uppercase tracking-widest text-gray-700 group-hover/metric:text-blue-600">
@@ -134,9 +134,9 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 * i }}
-            className="p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-white hover:shadow-2xl transition-all duration-500 group flex flex-col items-center md:items-start"
+            className="p-8 bg-gray-50 rounded-xl border border-gray-100 hover:bg-blue-50/50 hover:shadow transition-all duration-500 group flex flex-col items-center md:items-start"
           >
-            <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
+            <div className="w-12 h-12 bg-white hover:bg-blue-50/50 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">
               <Icon icon={phi.icon} width={24} />
             </div>
             <h5 className="text-lg font-bold text-gray-900 mb-3">{phi.title}</h5>

@@ -28,7 +28,7 @@ const Education = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="group relative bg-white rounded-[2.5rem] border border-gray-100 p-8 md:p-12 transition-all duration-500 hover:shadow-2xl hover:border-blue-100 flex flex-col md:flex-row gap-10 overflow-hidden"
+            className="group relative bg-white hover:bg-blue-50/50 rounded-xl border border-gray-100 p-8 md:p-12 transition-all duration-500 hover:shadow hover:border-blue-100 flex flex-col md:flex-row gap-10 overflow-hidden"
           >
             {/* Background Accent */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-[5rem] -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700 opacity-50" />
@@ -38,7 +38,7 @@ const Education = () => {
                 <Link 
                     href={edu.url || '#'} 
                     target="_blank" 
-                    className={`w-24 h-24 bg-white rounded-3xl flex items-center justify-center transition-all duration-500 shadow-md border border-gray-50 overflow-hidden relative p-4 ${edu.url ? 'hover:scale-110 hover:rotate-6 hover:shadow-xl hover:border-blue-200' : 'cursor-default'}`}
+                    className={`w-24 h-24 bg-white hover:bg-blue-50/50 rounded-xl flex items-center justify-center transition-all duration-500 shadow border border-gray-50 overflow-hidden relative p-4 ${edu.url ? 'hover:scale-110 hover:rotate-6 hover:shadow hover:border-blue-200' : 'cursor-default'}`}
                 >
                     {edu.icon && edu.icon.startsWith('/') ? (
                         <Image 
@@ -70,7 +70,7 @@ const Education = () => {
                         )}
                     </div>
                     {edu.grade && (
-                        <div className="inline-flex items-center gap-2 px-4 py-2 mt-4 bg-gray-900 rounded-2xl text-white shadow-xl shadow-gray-200">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 mt-4 bg-gray-900 rounded-xl text-white shadow shadow-gray-200">
                             <Icon icon="mdi:star-circle" width={18} className="text-yellow-400" />
                             <span className="text-xs font-black uppercase tracking-wider">{edu.grade}</span>
                         </div>
@@ -100,7 +100,7 @@ const Education = () => {
                             {edu.specialization.map((item) => (
                                 <span 
                                     key={item} 
-                                    className="bg-blue-50/50 text-blue-600 text-[11px] font-bold px-3 py-1.5 rounded-xl border border-blue-100/50 hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default"
+                                    className="bg-white hover:bg-blue-50/50 text-blue-600 text-[11px] font-bold px-3 py-1.5 rounded-xl border border-blue-100/50 hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-default"
                                 >
                                     {item}
                                 </span>

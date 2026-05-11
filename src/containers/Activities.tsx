@@ -27,7 +27,7 @@ const Activities = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="group relative bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-blue-100 overflow-hidden flex flex-col h-full"
+            className="group relative bg-white hover:bg-blue-50/50 p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow transition-all duration-500 hover:border-blue-100 overflow-hidden flex flex-col h-full"
           >
             {/* Background Icon Glow */}
             <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.08] group-hover:scale-125 transition-all duration-700">
@@ -42,7 +42,7 @@ const Activities = () => {
 
             <div className="relative z-10 flex flex-col h-full">
               <div className="flex justify-between items-start mb-8">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md border border-gray-50 overflow-hidden relative p-3 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <div className="w-16 h-16 bg-white hover:bg-blue-50/50 rounded-xl flex items-center justify-center shadow border border-gray-50 overflow-hidden relative p-3 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                   {act.icon && act.icon.startsWith('/') ? (
                     <Image 
                         src={act.icon} 
@@ -61,7 +61,7 @@ const Activities = () => {
 
               <div className="flex-grow">
                 <div className="mb-4">
-                    <span className="bg-gray-900 text-white text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-tighter shadow-xl shadow-gray-200">
+                    <span className="bg-gray-900 text-white text-[9px] font-black px-2 py-0.5 rounded-md uppercase tracking-tighter shadow shadow-gray-200">
                         {act.role}
                     </span>
                 </div>

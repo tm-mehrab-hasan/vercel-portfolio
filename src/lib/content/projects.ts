@@ -1,7 +1,7 @@
 import { ProjectsSectionType } from '../types/sections';
 
 export const projectsSection: ProjectsSectionType = {
-  title: 'Featured Projects',
+  title: 'Other Notable Projects',
   projects: [
     {
       id: 'vwar',

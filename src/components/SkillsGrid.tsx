@@ -40,7 +40,7 @@ const SkillsGrid = ({ softwareSkills }: { softwareSkills: SoftwareSkillType[] })
               onClick={() => setFilter(cat)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 capitalize flex items-center gap-2 ${
                 filter === cat
-                  ? 'bg-white text-blue-600 shadow-sm'
+                  ? 'bg-white hover:bg-blue-50/50 text-blue-600 shadow-sm'
                   : 'text-gray-500 hover:text-gray-900 hover:bg-gray-200'
               }`}
             >
@@ -78,11 +78,11 @@ const SkillsGrid = ({ softwareSkills }: { softwareSkills: SoftwareSkillType[] })
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              className={`group relative bg-white rounded-2xl border border-gray-100 p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 overflow-hidden ${
+              className={`group relative bg-white hover:bg-blue-50/50 rounded-xl border border-gray-100 p-6 transition-all duration-300 hover:shadow hover:-translate-y-2 overflow-hidden ${
                 skill.featured ? 'ring-2 ring-blue-500/20' : ''
               }`}
             >
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-10 transition duration-500" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl blur opacity-0 group-hover:opacity-10 transition duration-500" />
               
               <div className="relative">
                 <div className="flex justify-between items-start mb-4">
@@ -130,7 +130,7 @@ const SkillsGrid = ({ softwareSkills }: { softwareSkills: SoftwareSkillType[] })
       </motion.div>
 
       {/* Skills Summary Stats */}
-      <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 bg-gray-50 rounded-3xl p-8 border border-gray-100">
+      <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 bg-gray-50 rounded-xl p-8 border border-gray-100">
         <div className="text-center">
           <div className="text-4xl font-black text-blue-600 mb-1">{stats.total}</div>
           <div className="text-xs font-bold text-gray-500 uppercase tracking-wider">Technologies</div>

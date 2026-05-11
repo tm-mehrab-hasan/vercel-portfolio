@@ -45,7 +45,7 @@ const Hero = () => {
           <div className="absolute inset-0 border-[10px] md:border-[20px] border-blue-50 rounded-full animate-[spin_20s_linear_infinite] opacity-50" />
           <div className="absolute inset-2 md:inset-4 border-[1px] md:border-[2px] border-dashed border-blue-200 rounded-full animate-[spin_30s_linear_infinite_reverse] opacity-50" />
           
-          <div className="relative z-10 scale-100 lg:scale-110 drop-shadow-[0_15px_15px_rgba(37,99,235,0.1)] lg:drop-shadow-[0_35px_35px_rgba(37,99,235,0.15)]">
+          <div className="relative z-10 scale-100 lg:scale-110 drop-shadow">
             <ShowLottie path="/lotties/coding.json" className="w-full" />
           </div>
 
@@ -53,9 +53,9 @@ const Hero = () => {
           <motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-4 -right-4 lg:top-10 lg:right-0 bg-white p-2 md:p-4 rounded-2xl md:rounded-[2rem] shadow-xl border border-gray-50 flex items-center gap-2 md:gap-4 z-20"
+            className="absolute -top-4 -right-4 lg:top-10 lg:right-0 bg-white p-2 md:p-4 rounded-xl md:rounded-xl shadow border border-gray-50 flex items-center gap-2 md:gap-4 z-20"
           >
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shrink-0">
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-600 rounded-xl md:rounded-xl flex items-center justify-center text-white shadow shrink-0">
                 <Icon icon="mdi:robot" width={20} />
             </div>
             <div className="min-w-0">
@@ -120,7 +120,7 @@ const Hero = () => {
                     variant={i === 0 ? 'primary' : 'outline'}
                     sameTab={cta.sameTab}
                     onClick={(e) => handleCtaClick(e, cta.url)}
-                    className="px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl hover:scale-105 transition-transform"
+                    className="px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm shadow hover:scale-105 transition-transform"
                 >
                     {cta.title}
                 </Button>
@@ -134,7 +134,7 @@ const Hero = () => {
                         key={social.name} 
                         href={social.url} 
                         target="_blank"
-                        className="text-gray-400 hover:text-blue-600 transition-all hover:scale-125 p-2 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg"
+                        className="text-gray-400 hover:text-blue-600 transition-all hover:scale-125 p-2 bg-gray-50 rounded-xl hover:bg-white hover:shadow"
                         title={social.name}
                     >
                         <Icon icon={social.icon} width={22} />

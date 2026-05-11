@@ -40,7 +40,7 @@ const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-4 rounded-2xl bg-gray-900 text-white shadow-[8px_8px_0px_0px_rgba(37,99,235,1)] hover:bg-blue-600 hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all focus:outline-none"
+          className="fixed bottom-8 right-8 z-50 p-4 rounded-xl bg-gray-900 text-white shadow hover:bg-blue-600 transition-all focus:outline-none"
           aria-label="Scroll to top"
         >
           <Icon icon="lucide:arrow-up" className="w-6 h-6" />

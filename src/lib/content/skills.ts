@@ -7,8 +7,8 @@ export const skillsSection: SkillsSectionType = {
       id: 'fullstack',
       title: 'Software Development',
       lottie: {
-        light: '/lotties/frontend.json',
-        dark: '/lotties/frontend-dark.json',
+        light: '/lotties/software developer.json',
+        dark: '/lotties/software developer.json',
       },
       points: [
         'Building responsive Single-Page-Apps (SPA) using React.js and Next.js',
@@ -30,7 +30,7 @@ export const skillsSection: SkillsSectionType = {
     },
     {
       id: 'robotics',
-      title: 'Robotics & IoT Engineering',
+      title: 'IoT & Robotics Engineering',
       lottie: {
         light: '/lotties/designing.json',
         dark: '/lotties/designing-dark.json',
@@ -54,8 +54,8 @@ export const skillsSection: SkillsSectionType = {
       id: 'tools',
       title: 'Tools & DevOps',
       lottie: {
-        light: '/lotties/404.json',
-        dark: '/lotties/404.json',
+        light: '/lotties/dev ops.json',
+        dark: '/lotties/dev ops-dark.json',
       },
       points: [
         'Version control and collaborative development using Git and GitHub',

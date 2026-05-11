@@ -17,12 +17,12 @@ const SkillCard = ({
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      className={`group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-white border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
+      className={`group relative flex flex-col items-center justify-center p-6 rounded-xl bg-white hover:bg-blue-50/50 border border-gray-100 transition-all duration-300 hover:shadow hover:-translate-y-1 ${
         featured ? 'ring-2 ring-blue-500/10' : ''
       }`}
     >
       <div className="relative z-10 flex flex-col items-center gap-4">
-        <div className="p-4 bg-gray-50 rounded-2xl group-hover:bg-blue-50 group-hover:scale-110 transition-all duration-500">
+        <div className="p-4 bg-gray-50 rounded-xl group-hover:bg-blue-50 group-hover:scale-110 transition-all duration-500">
           <Icon icon={icon} width={40} className="text-gray-700 group-hover:text-blue-600" />
         </div>
         <span className="text-sm font-bold text-gray-600 group-hover:text-gray-900 transition-colors">

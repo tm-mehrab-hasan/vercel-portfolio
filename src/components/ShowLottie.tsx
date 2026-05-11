@@ -16,7 +16,7 @@ type Props = {
 const ShowLottie = ({ path, className }: Props) => {
   return (
     <div className={cn('max-w-sm md:max-w-md mx-auto aspect-square', className)}>
-      <Suspense fallback={<div className="w-full h-full bg-gray-50 animate-pulse rounded-2xl" />}>
+      <Suspense fallback={<div className="w-full h-full bg-gray-50 animate-pulse rounded-xl" />}>
         <Player autoplay loop src={path} style={{ height: '100%', width: '100%' }} />
       </Suspense>
     </div>
