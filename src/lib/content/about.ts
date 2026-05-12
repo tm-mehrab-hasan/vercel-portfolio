@@ -18,5 +18,5 @@ export const aboutSection: AboutSectionType = {
       'Real-time Intelligent Systems',
     ],
   },
-  img: '/images/profile-picture.jpg',
+  img: '/images/Formal Pic.jpeg',
 };
