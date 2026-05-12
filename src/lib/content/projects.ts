@@ -188,7 +188,7 @@ export const projectsSection: ProjectsSectionType = {
       name: 'Greenity Foundation Platform',
       category: 'web',
       url: 'https://greenityfoundation.vercel.app/',
-      repo: '#',
+      repo: 'https://github.com/TM-Mehrab-Hasan/Greenity-Foundation-Website',
       year: '2022-2023',
       img: '/images/projects/greenity.png',
       mainIcon: 'akar-icons:leaf',
