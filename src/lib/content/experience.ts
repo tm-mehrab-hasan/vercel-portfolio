@@ -62,7 +62,7 @@ export const experienceSection: ExperienceSectionType = {
     },
     {
       company: 'Greenity Foundation',
-      companyUrl: 'https://greenityfoundation.com/',
+      companyUrl: 'https://greenityfoundation.vercel.app/',
       role: 'Lead Web Developer',
       started: 'Jan 2022',
       upto: 'Feb 2023',
