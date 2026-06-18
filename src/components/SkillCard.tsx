@@ -2,12 +2,12 @@
 import { motion } from 'framer-motion';
 import Icon from '@/components/Icon';
 
-const SkillCard = ({ 
-  name, 
+const SkillCard = ({
+  name,
   icon,
-  featured 
-}: { 
-  name: string; 
+  featured,
+}: {
+  name: string;
   icon: string;
   featured?: boolean;
 }) => {

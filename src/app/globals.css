@@ -64,3 +64,51 @@ p {
   background-color: rgba(37, 99, 235, 0.2);
   color: #2563eb;
 }
+
+/* ── Infinite marquee ticker ── */
+@keyframes marquee-ltr {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0%); }
+}
+
+@keyframes marquee-rtl {
+  from { transform: translateX(0%); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  will-change: transform;
+}
+
+.marquee-inner--ltr {
+  animation: marquee-ltr linear infinite;
+}
+
+.marquee-inner--rtl {
+  animation: marquee-rtl linear infinite;
+}
+
+.marquee-track:hover .marquee-inner {
+  animation-play-state: paused;
+}
